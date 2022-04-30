@@ -1,0 +1,4 @@
+{
+  "repos": "org:npm topic:npm-cli",
+  "remote": "origin"
+}

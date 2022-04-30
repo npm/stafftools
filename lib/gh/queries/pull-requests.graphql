@@ -1,0 +1,36 @@
+query (
+  $repos: String!
+  $firstRepos: Int!
+  $firstPrs: Int!
+  $label: [String!]
+  $state: [PullRequestState!]
+) {
+  search(query: $repos, first: $firstRepos, type: REPOSITORY) {
+    nodes {
+      ... on Repository {
+        name
+        nameWithOwner
+        owner {
+          login
+        }
+        pullRequests(labels: $label, first: $firstPrs, states: $state) {
+          nodes {
+            number
+            url
+            title
+            state
+            commits(last: 1) {
+              nodes {
+                commit {
+                  statusCheckRollup {
+                    state
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

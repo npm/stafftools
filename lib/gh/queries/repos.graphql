@@ -1,0 +1,25 @@
+query ($repos: String!, $first: Int!) {
+  search(query: $repos, first: $first, type: REPOSITORY) {
+    nodes {
+      ... on Repository {
+        name
+        nameWithOwner
+        url
+        owner {
+          login
+        }
+        isArchived
+        autoMergeAllowed
+        mergeCommitAllowed
+        rebaseMergeAllowed
+        squashMergeAllowed
+        deleteBranchOnMerge
+        pkg: object(expression: "HEAD:package.json") {
+          ... on Blob {
+            text
+          }
+        }
+      }
+    }
+  }
+}

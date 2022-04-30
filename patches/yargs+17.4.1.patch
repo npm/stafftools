@@ -1,0 +1,15 @@
+diff --git a/node_modules/yargs/build/lib/yargs-factory.js b/node_modules/yargs/build/lib/yargs-factory.js
+index f79ad50..2400277 100644
+--- a/node_modules/yargs/build/lib/yargs-factory.js
++++ b/node_modules/yargs/build/lib/yargs-factory.js
+@@ -667,7 +667,9 @@ export class YargsInstance {
+                 this.skipValidation(key);
+             }
+             const desc = opt.describe || opt.description || opt.desc;
+-            this.describe(key, desc);
++            if (typeof desc === 'string') {
++                this.describe(key, desc);
++            }
+             if (opt.hidden) {
+                 this.hide(key);
+             }

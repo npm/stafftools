@@ -19,6 +19,10 @@
     "posttest": "npm run lint",
     "postinstall": "patch-package"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/stafftools.git"
+  },
   "keywords": [],
   "author": "GitHub Inc.",
   "license": "ISC",

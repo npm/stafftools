@@ -17,8 +17,8 @@ Command Options:
       --repos   query to filter repos  [string] [required] [default: "org:npm topic:npm-cli"]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "/Users/lukekarrys/projects"]
-  -l, --limit     number of worker threads to spawn  [number] [default: 7]
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table"] [default: "json"]
@@ -43,8 +43,8 @@ Command Options:
       --table  shorthand for --template=table  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "/Users/lukekarrys/projects"]
-  -l, --limit     number of worker threads to spawn  [number] [default: 7]
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table"] [default: "table"]
@@ -68,8 +68,8 @@ Command Options:
       --cache  how long for gh to cache the query  [string] [default: "1m"]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "/Users/lukekarrys/projects"]
-  -l, --limit     number of worker threads to spawn  [number] [default: 7]
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]
@@ -100,8 +100,8 @@ Command Options:
       --table           shorthand for --template=table  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "/Users/lukekarrys/projects"]
-  -l, --limit     number of worker threads to spawn  [number] [default: 7]
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table"] [default: "json"]
@@ -129,8 +129,8 @@ Command Options:
       --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli"]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "/Users/lukekarrys/projects"]
-  -l, --limit     number of worker threads to spawn  [number] [default: 7]
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table"] [default: "json"]
@@ -158,8 +158,8 @@ Command Options:
       --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli"]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "/Users/lukekarrys/projects"]
-  -l, --limit     number of worker threads to spawn  [number] [default: 7]
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table"] [default: "json"]
@@ -189,8 +189,8 @@ Command Options:
       --state           state to filter pull requests  [string] [choices: "CLOSED", "MERGED", "OPEN"] [default: "OPEN"]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "/Users/lukekarrys/projects"]
-  -l, --limit     number of worker threads to spawn  [number] [default: 7]
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table"] [default: "json"]
@@ -219,8 +219,8 @@ Commands:
   npx -p @npmcli/stafftools gh repos             Fetch repos
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "/Users/lukekarrys/projects"]
-  -l, --limit     number of worker threads to spawn  [number] [default: 7]
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]
@@ -245,8 +245,8 @@ Command Options:
       --table  shorthand for --template=table  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "/Users/lukekarrys/projects"]
-  -l, --limit     number of worker threads to spawn  [number] [default: 7]
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table"] [default: "table"]
@@ -273,8 +273,8 @@ Command Options:
       --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli"]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "/Users/lukekarrys/projects"]
-  -l, --limit     number of worker threads to spawn  [number] [default: 7]
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]
@@ -301,8 +301,8 @@ Command Options:
       --table  shorthand for --template=table  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "/Users/lukekarrys/projects"]
-  -l, --limit     number of worker threads to spawn  [number] [default: 7]
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table"] [default: "table"]
@@ -327,8 +327,8 @@ Command Options:
       --table  shorthand for --template=table  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "/Users/lukekarrys/projects"]
-  -l, --limit     number of worker threads to spawn  [number] [default: 7]
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table"] [default: "table"]
@@ -354,8 +354,8 @@ Command Options:
       --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli"]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "/Users/lukekarrys/projects"]
-  -l, --limit     number of worker threads to spawn  [number] [default: 7]
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]

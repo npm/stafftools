@@ -3,15 +3,19 @@ import { spawnSync } from 'child_process'
 import { dirname, resolve } from 'path'
 import { fileURLToPath } from 'url'
 
+t.cleanSnapshot = (s) =>
+  s
+    .replace(/(--limit.*\[default: )(\d+)/g, '$1$NUM_CORES')
+    .split(process.env.HOME)
+    .join('$HOME')
+
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 
-const getHelp = (...cmd) => {
-  const { stdout } = spawnSync('node', ['./bin/gh.mjs', ...cmd, '--help'], {
+const getHelp = (...cmd) =>
+  spawnSync('node', ['./bin/gh.mjs', ...cmd, '--help'], {
     encoding: 'utf-8',
     cwd: root,
   })
-  return stdout
-}
 
 t.test('help messages', async (t) => {
   const commands = [
@@ -31,6 +35,9 @@ t.test('help messages', async (t) => {
   ]
 
   for (const cmd of commands) {
-    t.matchSnapshot(getHelp(...cmd), cmd.join(' '))
+    const res = getHelp(...cmd)
+    t.equal(res.status, 0)
+    t.equal(res.stderr, '')
+    t.matchSnapshot(res.stdout, cmd.join(' '))
   }
 })

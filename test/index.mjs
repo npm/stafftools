@@ -1,13 +1,13 @@
 import t from 'tap'
 import { spawnSync } from 'child_process'
-import { dirname, resolve } from 'path'
+import { dirname, resolve, sep } from 'path'
 import { fileURLToPath } from 'url'
 
 t.cleanSnapshot = (s) =>
   s
     .replace(/(--limit.*\[default: )(\d+)/g, '$1$NUM_CORES')
-    .split(process.env.HOME)
-    .join('$HOME')
+    .split(process.env.HOME + sep)
+    .join('$HOME/')
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 

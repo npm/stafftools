@@ -34,7 +34,7 @@
     "lodash-es": "^4.17.21",
     "patch-package": "^6.4.7",
     "relaxed-json": "^1.0.3",
-    "serialize-error": "^10.0.0",
+    "serialize-error": "^11.0.0",
     "single-line-log": "^1.1.2",
     "string-width": "^5.1.2",
     "yargs": "^17.4.1"

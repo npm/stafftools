@@ -1,6 +1,6 @@
 {
   "name": "@npmcli/stafftools",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "",
   "main": "./lib/index.js",
   "bin": {
@@ -18,6 +18,10 @@
     "snap": "tap",
     "posttest": "npm run lint",
     "postinstall": "patch-package"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/stafftools.git"
   },
   "keywords": [],
   "author": "GitHub Inc.",
@@ -52,6 +56,13 @@
   "prettier": {
     "semi": false,
     "singleQuote": true
+  },
+  "tap": {
+    "no-coverage": true,
+    "node-arg": [
+      "--require=./node_modules/patch-package/dist/index.js"
+    ],
+    "timeout": 600
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",

@@ -1,5 +1,5 @@
 diff --git a/node_modules/yargs/build/lib/yargs-factory.js b/node_modules/yargs/build/lib/yargs-factory.js
-index f79ad50..2400277 100644
+index 40a2921..e455a37 100644
 --- a/node_modules/yargs/build/lib/yargs-factory.js
 +++ b/node_modules/yargs/build/lib/yargs-factory.js
 @@ -667,7 +667,9 @@ export class YargsInstance {

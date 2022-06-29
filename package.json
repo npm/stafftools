@@ -70,7 +70,6 @@
     "ciVersions": [
       "18"
     ],
-    "lockfile": true,
     "distPaths": [
       "bin/",
       "lib/",

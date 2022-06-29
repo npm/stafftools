@@ -16,6 +16,22 @@ Run commands across all `npm-cli` repos on your local machine using working thre
 
 - **Note:** The [`gh`](https://cli.github.com/manual/) cli needs to be installed and authenticated.
 
+### Options
+
+#### `cwd`
+
+The base directory in which all commands will be run. Defaults to `$HOME/projects`.
+
+#### `limit`
+
+Number of worker threads to spawn. Defaults to one less than the number of cores avaialble.
+
+#### `filter[]`
+
+An array of [relaxed JSON](http://www.relaxedjson.org) strings to filter the returned data.
+
+For example: `gh merge pull-requests --filter 'title: SOME TITLE'.
+
 ### Commands
 
 These commands will all do something on your local machine.
@@ -40,10 +56,22 @@ Fix failing template-oss pull requests
 
 Running these queries will only output the data returned from them. They can be combined with the commands above where the types match, such as `gh repos clone` and `gh merge pull-requests`.
 
+#### `gh dependabot`
+
+Fetch dependabot pull requests
+
 #### `gh graphql`
+
+Fetch a graphql query
 
 #### `gh pending-release`
 
+Fetch pending release pull requests
+
 #### `gh pull-requests`
 
+Fetch pull requests
+
 #### `gh repos`
+
+Fetch repos

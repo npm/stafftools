@@ -9,7 +9,7 @@ import { flow, transform, identity, noop } from 'lodash-es'
 import createRender from '../lib/gh/render/index.mjs'
 import run from '../lib/gh/index.mjs'
 import coerceFilter from '../lib/gh/yargs/filter.mjs'
-import { absOrRel, addProps, readJson } from '../lib/gh/utils.mjs'
+import { absOrRel, addProps, npxify, readJson, readPkg } from '../lib/utils.mjs'
 import * as yargsUtils from '../lib/gh/yargs/utils.mjs'
 import parseCommand from '../lib/gh/yargs/parse-command.mjs'
 import buildCommands from '../lib/gh/yargs/build-commands.mjs'
@@ -20,7 +20,7 @@ const __dirname = dirname(__pathname)
 const libDir = resolve(__dirname, '..', 'lib', 'gh')
 
 const [pkg, defaults, workers, queries, templates] = await Promise.all([
-  readJson(resolve(__dirname, '..', 'package.json')),
+  readPkg(),
   readJson(join(libDir, 'config.json')),
   yargsUtils.readdirCommands(join(libDir, 'workers')),
   yargsUtils.readdirCommands(join(libDir, 'queries')),
@@ -149,7 +149,7 @@ const middleware = [
 ]
 
 const yargs = Yargs(hideBin(process.argv))
-  .scriptName(`npx -p ${pkg.name} ${__filename}`)
+  .scriptName(npxify(pkg, __filename))
   .updateStrings({ 'Options:': optionGroups.other })
   .config('config')
   .options(addProps(options, { global: true, group: optionGroups.global }))

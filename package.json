@@ -38,6 +38,7 @@
     "serialize-error": "^11.0.0",
     "single-line-log": "^1.1.2",
     "string-width": "^5.1.2",
+    "which": "^2.0.2",
     "yargs": "^17.4.1"
   },
   "devDependencies": {

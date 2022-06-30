@@ -3,6 +3,9 @@ import { spawnSync } from 'child_process'
 import { dirname, resolve } from 'path'
 import { fileURLToPath } from 'url'
 
+t.cleanSnapshot = (s) =>
+  s.split(/@npmcli\/stafftools@[^\s]+/).join('@npmcli/stafftools@${VERSION}')
+
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 
 const runCmd = () =>

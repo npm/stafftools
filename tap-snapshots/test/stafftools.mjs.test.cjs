@@ -6,11 +6,11 @@
  */
 'use strict'
 exports[`test/stafftools.mjs TAP output > must match snapshot 1`] = `
-@npmcli/stafftools@0.0.0
+@npmcli/stafftools@\${VERSION}
 
 The npm CLI Team's Internal Tools
 
 Available commands:
-  - npx -p @npmcli/stafftools -- gh
+  - npx -p @npmcli/stafftools gh
 
 `

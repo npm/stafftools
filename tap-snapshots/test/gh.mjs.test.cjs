@@ -6,12 +6,12 @@
  */
 'use strict'
 exports[`test/gh.mjs TAP help messages > clone 1`] = `
-npx -p @npmcli/stafftools -- gh clone
+npx -p @npmcli/stafftools gh clone
 
 Clone all matching repos into a directory
 
 Commands:
-  npx -p @npmcli/stafftools -- gh clone repos  Fetch repos
+  npx -p @npmcli/stafftools gh clone repos  Fetch repos
 
 Command Options:
       --remote  name of the remote  [required] [default: "origin"]
@@ -34,7 +34,7 @@ Other Options:
 `
 
 exports[`test/gh.mjs TAP help messages > dependabot 1`] = `
-npx -p @npmcli/stafftools -- gh dependabot
+npx -p @npmcli/stafftools gh dependabot
 
 Fetch dependabot pull requests
 
@@ -60,7 +60,7 @@ Other Options:
 `
 
 exports[`test/gh.mjs TAP help messages > graphql 1`] = `
-npx -p @npmcli/stafftools -- gh graphql
+npx -p @npmcli/stafftools gh graphql
 
 Fetch a graphql query
 
@@ -85,14 +85,14 @@ Other Options:
 `
 
 exports[`test/gh.mjs TAP help messages > merge 1`] = `
-npx -p @npmcli/stafftools -- gh merge
+npx -p @npmcli/stafftools gh merge
 
 Merge pull requests
 
 Commands:
-  npx -p @npmcli/stafftools -- gh merge dependabot       Fetch dependabot pull requests
-  npx -p @npmcli/stafftools -- gh merge pending-release  Fetch pending release pull requests
-  npx -p @npmcli/stafftools -- gh merge pull-requests    Fetch pull requests
+  npx -p @npmcli/stafftools gh merge dependabot       Fetch dependabot pull requests
+  npx -p @npmcli/stafftools gh merge pending-release  Fetch pending release pull requests
+  npx -p @npmcli/stafftools gh merge pull-requests    Fetch pull requests
 
 Command Options:
       --merge-strategy  strategy to use when merging the pull request  [required] [choices: "squash", "rebase"]
@@ -117,7 +117,7 @@ Other Options:
 `
 
 exports[`test/gh.mjs TAP help messages > merge dependabot 1`] = `
-npx -p @npmcli/stafftools -- gh merge dependabot
+npx -p @npmcli/stafftools gh merge dependabot
 
 Fetch dependabot pull requests
 
@@ -146,7 +146,7 @@ Other Options:
 `
 
 exports[`test/gh.mjs TAP help messages > merge pending-release 1`] = `
-npx -p @npmcli/stafftools -- gh merge pending-release
+npx -p @npmcli/stafftools gh merge pending-release
 
 Fetch pending release pull requests
 
@@ -175,7 +175,7 @@ Other Options:
 `
 
 exports[`test/gh.mjs TAP help messages > merge pull-requests 1`] = `
-npx -p @npmcli/stafftools -- gh merge pull-requests
+npx -p @npmcli/stafftools gh merge pull-requests
 
 Fetch pull requests
 
@@ -206,18 +206,18 @@ Other Options:
 `
 
 exports[`test/gh.mjs TAP help messages > must match snapshot 1`] = `
-npx -p @npmcli/stafftools -- gh <command>
+npx -p @npmcli/stafftools gh <command>
 
 Commands:
-  npx -p @npmcli/stafftools -- gh clone             Clone all matching repos into a directory
-  npx -p @npmcli/stafftools -- gh merge             Merge pull requests
-  npx -p @npmcli/stafftools -- gh publish           Merge pending release PRs and publish the resulting release
-  npx -p @npmcli/stafftools -- gh template-oss-fix  Fix failing template-oss pull requests
-  npx -p @npmcli/stafftools -- gh dependabot        Fetch dependabot pull requests
-  npx -p @npmcli/stafftools -- gh graphql           Fetch a graphql query
-  npx -p @npmcli/stafftools -- gh pending-release   Fetch pending release pull requests
-  npx -p @npmcli/stafftools -- gh pull-requests     Fetch pull requests
-  npx -p @npmcli/stafftools -- gh repos             Fetch repos
+  npx -p @npmcli/stafftools gh clone             Clone all matching repos into a directory
+  npx -p @npmcli/stafftools gh merge             Merge pull requests
+  npx -p @npmcli/stafftools gh publish           Merge pending release PRs and publish the resulting release
+  npx -p @npmcli/stafftools gh template-oss-fix  Fix failing template-oss pull requests
+  npx -p @npmcli/stafftools gh dependabot        Fetch dependabot pull requests
+  npx -p @npmcli/stafftools gh graphql           Fetch a graphql query
+  npx -p @npmcli/stafftools gh pending-release   Fetch pending release pull requests
+  npx -p @npmcli/stafftools gh pull-requests     Fetch pull requests
+  npx -p @npmcli/stafftools gh repos             Fetch repos
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
@@ -236,7 +236,7 @@ Other Options:
 `
 
 exports[`test/gh.mjs TAP help messages > pending-release 1`] = `
-npx -p @npmcli/stafftools -- gh pending-release
+npx -p @npmcli/stafftools gh pending-release
 
 Fetch pending release pull requests
 
@@ -262,7 +262,7 @@ Other Options:
 `
 
 exports[`test/gh.mjs TAP help messages > publish 1`] = `
-npx -p @npmcli/stafftools -- gh publish
+npx -p @npmcli/stafftools gh publish
 
 Merge pending release PRs and publish the resulting release
 
@@ -290,7 +290,7 @@ Other Options:
 `
 
 exports[`test/gh.mjs TAP help messages > pull-requests 1`] = `
-npx -p @npmcli/stafftools -- gh pull-requests
+npx -p @npmcli/stafftools gh pull-requests
 
 Fetch pull requests
 
@@ -318,7 +318,7 @@ Other Options:
 `
 
 exports[`test/gh.mjs TAP help messages > repos 1`] = `
-npx -p @npmcli/stafftools -- gh repos
+npx -p @npmcli/stafftools gh repos
 
 Fetch repos
 
@@ -344,7 +344,7 @@ Other Options:
 `
 
 exports[`test/gh.mjs TAP help messages > template-oss-fix 1`] = `
-npx -p @npmcli/stafftools -- gh template-oss-fix
+npx -p @npmcli/stafftools gh template-oss-fix
 
 Fix failing template-oss pull requests
 

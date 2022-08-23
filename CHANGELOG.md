@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/npm/stafftools/compare/v1.0.0...v1.0.1) (2022-08-23)
+
+
+### Bug Fixes
+
+* make nested commands run regardless of shape ([#18](https://github.com/npm/stafftools/issues/18)) ([89cceac](https://github.com/npm/stafftools/commit/89cceac892b027dff70263b0f37d9241b849d2df))
+
 ## 1.0.0 (2022-07-21)
 
 

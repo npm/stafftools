@@ -10,19 +10,17 @@ npx -p @npmcli/stafftools gh clone
 
 Clone all matching repos into a directory
 
-Commands:
-  npx -p @npmcli/stafftools gh clone repos  Fetch repos
-
 Command Options:
       --remote  name of the remote  [required] [default: "origin"]
-      --table   shorthand for --template=table  [boolean] [default: false]
+      --cache   how long for gh to cache the query  [string] [default: "1h"]
+      --repos   query to filter repos  [string] [required] [default: "org:npm topic:npm-cli"]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table"] [default: "json"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -211,7 +209,9 @@ npx -p @npmcli/stafftools gh <command>
 Commands:
   npx -p @npmcli/stafftools gh clone             Clone all matching repos into a directory
   npx -p @npmcli/stafftools gh merge             Merge pull requests
+  npx -p @npmcli/stafftools gh publish-repos     Publish all matching repos from their default branch
   npx -p @npmcli/stafftools gh publish           Merge pending release PRs and publish the resulting release
+  npx -p @npmcli/stafftools gh pull              Pull default branch of all matching repos
   npx -p @npmcli/stafftools gh template-oss-fix  Fix failing template-oss pull requests
   npx -p @npmcli/stafftools gh dependabot        Fetch dependabot pull requests
   npx -p @npmcli/stafftools gh graphql           Fetch a graphql query

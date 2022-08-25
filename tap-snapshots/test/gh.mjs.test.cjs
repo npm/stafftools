@@ -13,7 +13,7 @@ Clone all matching repos into a directory
 Command Options:
       --remote  name of the remote  [required] [default: "origin"]
       --cache   how long for gh to cache the query  [string] [default: "1h"]
-      --repos   query to filter repos  [string] [required] [default: "org:npm topic:npm-cli"]
+      --repos   query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true"]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
@@ -38,7 +38,7 @@ Fetch dependabot pull requests
 
 Command Options:
       --cache  how long for gh to cache the query  [string] [default: "1m"]
-      --repos  query to filter repos  [string] [required] [default: "org:npm topic:npm-cli"]
+      --repos  query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true"]
       --table  shorthand for --template=table  [boolean] [default: false]
 
 Global Options:
@@ -125,7 +125,7 @@ Command Options:
       --default-filter  whether to apply the default filter to the data  [boolean] [default: true]
       --table           shorthand for --template=table  [boolean] [default: false]
       --cache           how long for gh to cache the query  [string] [default: "1m"]
-      --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli"]
+      --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true"]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
@@ -154,7 +154,7 @@ Command Options:
       --default-filter  whether to apply the default filter to the data  [boolean] [default: true]
       --table           shorthand for --template=table  [boolean] [default: false]
       --cache           how long for gh to cache the query  [string] [default: "1m"]
-      --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli"]
+      --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true"]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
@@ -183,7 +183,7 @@ Command Options:
       --default-filter  whether to apply the default filter to the data  [boolean] [default: true]
       --table           shorthand for --template=table  [boolean] [default: false]
       --cache           how long for gh to cache the query  [string] [default: "1m"]
-      --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli"]
+      --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true"]
       --label           label to filter pull requests  [string]
       --state           state to filter pull requests  [string] [choices: "CLOSED", "MERGED", "OPEN"] [default: "OPEN"]
 
@@ -242,7 +242,7 @@ Fetch pending release pull requests
 
 Command Options:
       --cache  how long for gh to cache the query  [string] [default: "1m"]
-      --repos  query to filter repos  [string] [required] [default: "org:npm topic:npm-cli"]
+      --repos  query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true"]
       --table  shorthand for --template=table  [boolean] [default: false]
 
 Global Options:
@@ -271,7 +271,7 @@ Command Options:
       --remote          name of the remote  [required] [default: "origin"]
       --default-filter  whether to apply the default filter to the data  [boolean] [default: true]
       --cache           how long for gh to cache the query  [string] [default: "1m"]
-      --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli"]
+      --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true"]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
@@ -296,7 +296,7 @@ Fetch pull requests
 
 Command Options:
       --cache  how long for gh to cache the query  [string] [default: "1m"]
-      --repos  query to filter repos  [string] [required] [default: "org:npm topic:npm-cli"]
+      --repos  query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true"]
       --label  label to filter pull requests  [string]
       --state  state to filter pull requests  [string] [choices: "CLOSED", "MERGED", "OPEN"] [default: "OPEN"]
       --table  shorthand for --template=table  [boolean] [default: false]
@@ -324,7 +324,7 @@ Fetch repos
 
 Command Options:
       --cache  how long for gh to cache the query  [string] [default: "1h"]
-      --repos  query to filter repos  [string] [required] [default: "org:npm topic:npm-cli"]
+      --repos  query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true"]
       --table  shorthand for --template=table  [boolean] [default: false]
 
 Global Options:
@@ -352,7 +352,7 @@ Command Options:
       --message         Commit message to be used for template oss changes  [required] [default: "chore: postinstall for dependabot template-oss PR"]
       --default-filter  whether to apply the default filter to the data  [boolean] [default: true]
       --cache           how long for gh to cache the query  [string] [default: "1m"]
-      --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli"]
+      --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true"]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]

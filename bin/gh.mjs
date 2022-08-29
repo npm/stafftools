@@ -102,14 +102,15 @@ const middleware = [
     command: await parseCommand({
       workers,
       queries,
+      templates,
       argv,
     })
-      .then(({ worker, query }) => ({
-        worker: worker?.default ? worker.path : null,
+      .then(({ worker, query, template }) => ({
+        // Set the worker to the path since it will be imported
+        // via the path from within the worker thread
+        worker: worker?.default && worker.path,
         query: query?.default,
-        template:
-          templates.find((t) => worker?.type === t.type) ??
-          templates.find((t) => query?.type === t.type),
+        template,
         filter: flow(
           identity,
           argv.defaultFilter || identity,
@@ -125,6 +126,8 @@ const middleware = [
       ...globalTemplates,
       ...argv.command.template?.default,
     }
+
+    delete argv.command.template
 
     for (const t of Object.keys(allTemplates)) {
       if (argv[t] === true) {

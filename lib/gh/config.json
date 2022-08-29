@@ -1,4 +1,4 @@
 {
-  "repos": "org:npm topic:npm-cli fork:true",
+  "repos": "org:npm topic:npm-cli fork:true archived:false",
   "remote": "origin"
 }

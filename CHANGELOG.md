@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.0.0](https://github.com/npm/stafftools/compare/v1.0.1...v2.0.0) (2022-08-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* Query is now the first positional argument. Most commands can be run with the signature `<query> [worker]`. If the worker positional is not included, then the command will print the results of the query.
+
+### Features
+
+* add new commands and queries ([#23](https://github.com/npm/stafftools/issues/23)) ([2f2f405](https://github.com/npm/stafftools/commit/2f2f405331627e70c35c29423e4c3ee3c1d24609))
+
+
+### Bug Fixes
+
+* fetch forks by default ([#21](https://github.com/npm/stafftools/issues/21)) ([4da204e](https://github.com/npm/stafftools/commit/4da204e12419f002db45fdfbad71125c671bc619))
+
+
+### Documentation
+
+* update readme ([df5e8a6](https://github.com/npm/stafftools/commit/df5e8a6dee85ff5af75936e110643726af745e64))
+
 ## [1.0.1](https://github.com/npm/stafftools/compare/v1.0.0...v1.0.1) (2022-08-23)
 
 

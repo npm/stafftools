@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/npm/stafftools/compare/v2.0.0...v2.0.1) (2022-09-20)
+
+
+### Bug Fixes
+
+* make worker template the default ([2d0d906](https://github.com/npm/stafftools/commit/2d0d906530292c5a13f767c59a099e1518d6d7c2))
+
 ## [2.0.0](https://github.com/npm/stafftools/compare/v1.0.1...v2.0.0) (2022-08-29)
 
 

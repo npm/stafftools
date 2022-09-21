@@ -19,9 +19,12 @@ query (
             url
             title
             state
+            baseRefName
+            headRefName
             commits(last: 1) {
               nodes {
                 commit {
+                  message
                   statusCheckRollup {
                     state
                   }

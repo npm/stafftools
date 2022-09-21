@@ -58,7 +58,6 @@ const options = {
     alias: 'f',
     desc: 'filters to be parsed as relaxed json and applied to the data',
     type: 'array',
-    coerce: (v) => v.map(coerceFilter),
   },
   clean: {
     default: false,
@@ -113,8 +112,13 @@ const middleware = [
         template,
         filter: flow(
           identity,
-          argv.defaultFilter || identity,
-          argv.filter || identity
+          ...[
+            ...(query?.filter || []),
+            ...(worker?.filter || []),
+            ...(argv?.filter || []),
+          ]
+            .filter(Boolean)
+            .map(coerceFilter)
         ),
       }))
       .catch((err) => err),

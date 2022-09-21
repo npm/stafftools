@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/npm/stafftools/compare/v2.0.0...v2.0.1) (2022-09-21)
+
+### Bug Fixes
+
+* [`2f898c3`](https://github.com/npm/stafftools/commit/2f898c3cb108208ad3a8213ffa410e8eb90d25da) make template-oss-fix worker more robust (@lukekarrys)
+* [`b6e9e80`](https://github.com/npm/stafftools/commit/b6e9e80dddca4a7df7f4be4458c0ffaccc6250ed) add templateoss keys to repos table output (@lukekarrys)
+
 ## [2.0.0](https://github.com/npm/stafftools/compare/v1.0.1...v2.0.0) (2022-08-29)
 
 

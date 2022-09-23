@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.2](https://github.com/npm/stafftools/compare/v2.0.1...v2.0.2) (2022-09-23)
+
+### Bug Fixes
+
+* [`33a233c`](https://github.com/npm/stafftools/commit/33a233c85b5b9b1dfeaef31f32e56eecd48d6f65) correctly commit when amend and no message is provided (@lukekarrys)
+
 ## [2.0.1](https://github.com/npm/stafftools/compare/v2.0.0...v2.0.1) (2022-09-21)
 
 ### Bug Fixes

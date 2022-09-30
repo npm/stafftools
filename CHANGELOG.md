@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.3](https://github.com/npm/stafftools/compare/v2.0.2...v2.0.3) (2022-09-30)
+
+### Bug Fixes
+
+* [`c95c446`](https://github.com/npm/stafftools/commit/c95c4469cf2f31cf580ae6a5cb6010cbd3ccca72) template-oss-fix: add flags for installing to workspaces (@lukekarrys)
+
 ## [2.0.2](https://github.com/npm/stafftools/compare/v2.0.1...v2.0.2) (2022-09-23)
 
 ### Bug Fixes

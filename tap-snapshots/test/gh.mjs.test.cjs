@@ -16,6 +16,7 @@ gh dependabot remove-label
 gh dependabot rerun-failed-workflows
 gh graphql
 gh graphql clone
+gh graphql delete-branches
 gh graphql merge
 gh graphql pr-engines
 gh graphql publish-release
@@ -38,6 +39,7 @@ gh pull-requests remove-label
 gh pull-requests rerun-failed-workflows
 gh repos
 gh repos clone
+gh repos delete-branches
 gh repos publish-repo
 gh repos pull
 gh repos repo-settings
@@ -275,6 +277,7 @@ Fetch a graphql query
 
 Commands:
   npx -p @npmcli/stafftools gh graphql clone                   Clone repos into a directory
+  npx -p @npmcli/stafftools gh graphql delete-branches         Delete branches of repos with no remote counterpart
   npx -p @npmcli/stafftools gh graphql merge                   Merge pull requests
   npx -p @npmcli/stafftools gh graphql pr-engines              Get engine changes in a pull request
   npx -p @npmcli/stafftools gh graphql publish-release         Merge pending release PRs and publish the resulting release
@@ -308,6 +311,32 @@ exports[`test/gh.mjs TAP all commands help graphql clone > must match snapshot 1
 npx -p @npmcli/stafftools gh graphql clone
 
 Clone repos into a directory
+
+Command Options:
+      --query   path to a query file passed directly to gh api graphql  [string] [required]
+      --cache   how long for gh to cache the query  [string] [default: "1m"]
+      --report  shorthand for --template=report  [boolean] [default: false]
+      --remote  name of the remote  [required] [default: "origin"]
+
+Global Options:
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+`
+
+exports[`test/gh.mjs TAP all commands help graphql delete-branches > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh graphql delete-branches
+
+Delete branches of repos with no remote counterpart
 
 Command Options:
       --query   path to a query file passed directly to gh api graphql  [string] [required]
@@ -879,10 +908,11 @@ npx -p @npmcli/stafftools gh repos
 Fetch repos
 
 Commands:
-  npx -p @npmcli/stafftools gh repos clone          Clone repos into a directory
-  npx -p @npmcli/stafftools gh repos publish-repo   Publish repos from their default branch
-  npx -p @npmcli/stafftools gh repos pull           Checkout and pull default branch of repos
-  npx -p @npmcli/stafftools gh repos repo-settings  Set common settings on all repos
+  npx -p @npmcli/stafftools gh repos clone            Clone repos into a directory
+  npx -p @npmcli/stafftools gh repos delete-branches  Delete branches of repos with no remote counterpart
+  npx -p @npmcli/stafftools gh repos publish-repo     Publish repos from their default branch
+  npx -p @npmcli/stafftools gh repos pull             Checkout and pull default branch of repos
+  npx -p @npmcli/stafftools gh repos repo-settings    Set common settings on all repos
 
 Command Options:
       --cache  how long for gh to cache the query  [string] [default: "1h"]
@@ -908,6 +938,33 @@ exports[`test/gh.mjs TAP all commands help repos clone > must match snapshot 1`]
 npx -p @npmcli/stafftools gh repos clone
 
 Clone repos into a directory
+
+Command Options:
+      --cache   how long for gh to cache the query  [string] [default: "1h"]
+      --repos   query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --table   shorthand for --template=table  [boolean] [default: false]
+      --report  shorthand for --template=report  [boolean] [default: false]
+      --remote  name of the remote  [required] [default: "origin"]
+
+Global Options:
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "report"] [default: "report"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+`
+
+exports[`test/gh.mjs TAP all commands help repos delete-branches > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh repos delete-branches
+
+Delete branches of repos with no remote counterpart
 
 Command Options:
       --cache   how long for gh to cache the query  [string] [default: "1h"]

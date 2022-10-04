@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.1.0](https://github.com/npm/stafftools/compare/v2.0.3...v2.1.0) (2022-10-04)
+
+### Features
+
+* [`022fd89`](https://github.com/npm/stafftools/commit/022fd89fa7528bde9f08c5ad49d589bf41352e81) add delete branches command (@lukekarrys)
+
+### Bug Fixes
+
+* [`0ef5930`](https://github.com/npm/stafftools/commit/0ef5930be12cda8e25dde3e77b8f3a612a323431) ignore some repos (@lukekarrys)
+
+### Dependencies
+
+* [`b35a062`](https://github.com/npm/stafftools/commit/b35a0622c2ac4c8606f2ade1a6e604c5d35f8fc7) update yargs
+
 ## [2.0.3](https://github.com/npm/stafftools/compare/v2.0.2...v2.0.3) (2022-09-30)
 
 ### Bug Fixes

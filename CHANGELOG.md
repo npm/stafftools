@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.1.1](https://github.com/npm/stafftools/compare/v2.1.0...v2.1.1) (2022-10-13)
+
+### Bug Fixes
+
+* [`fd4c418`](https://github.com/npm/stafftools/commit/fd4c41888b2fefec335417159b6c8f0dff58755c) use config to globally exclude some repos (@lukekarrys)
+
 ## [2.1.0](https://github.com/npm/stafftools/compare/v2.0.3...v2.1.0) (2022-10-04)
 
 ### Features

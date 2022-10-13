@@ -59,6 +59,11 @@ const options = {
     desc: 'filters to be parsed as relaxed json and applied to the data',
     type: 'array',
   },
+  denyRepos: {
+    desc: 'repos to exlude from all results',
+    type: 'array',
+    hidden: true,
+  },
   clean: {
     default: false,
     desc: 'whether to rimraf the cwd first',

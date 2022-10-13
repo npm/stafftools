@@ -1,4 +1,5 @@
 {
   "repos": "org:npm topic:npm-cli fork:true archived:false",
-  "remote": "origin"
+  "remote": "origin",
+  "denyRepos": ["npm/node", "npm/release-please", "npm/npm-cli-release-please"]
 }

@@ -185,12 +185,16 @@ render.debug('ARGV:', argv)
 
 run({ render, ...argv })
   .then((res) => {
+    if (res == null) {
+      return
+    }
     const display = argv.template(res)
     if (display != null) {
       render.output(display)
     }
   })
   .catch((err) => {
-    render.outputError(err)
+    render.outputError('')
+    render.outputError(err.noStack ? err.message : err)
     process.exit(1)
   })

@@ -13,6 +13,11 @@ query (
         owner {
           login
         }
+        pkg: object(expression: "HEAD:package.json") {
+          ... on Blob {
+            text
+          }
+        }
         pullRequests(labels: $label, first: $firstPrs, states: $state) {
           nodes {
             number

@@ -89,9 +89,10 @@ Commands:
   npx -p @npmcli/stafftools gh closed-pending-release remove-label  Remove a label from pull requests
 
 Command Options:
-      --cache  how long for gh to cache the query  [string] [default: "1m"]
-      --repos  query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
-      --table  shorthand for --template=table  [boolean] [default: false]
+      --cache   how long for gh to cache the query  [string] [default: "1m"]
+      --repos   query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --noDeps  Only return items that do not depend on any other items returned  [boolean] [default: false]
+      --table   shorthand for --template=table  [boolean] [default: false]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
@@ -116,6 +117,7 @@ Remove a label from pull requests
 Command Options:
       --cache         how long for gh to cache the query  [string] [default: "1m"]
       --repos         query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --noDeps        Only return items that do not depend on any other items returned  [boolean] [default: false]
       --table         shorthand for --template=table  [boolean] [default: false]
       --report        shorthand for --template=report  [boolean] [default: false]
       --remove-label  label to remove from pull requests  [string] [required]
@@ -604,9 +606,10 @@ Commands:
   npx -p @npmcli/stafftools gh pending-release rerun-failed-workflows  Get engine changes in a pull request
 
 Command Options:
-      --cache  how long for gh to cache the query  [string] [default: "1m"]
-      --repos  query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
-      --table  shorthand for --template=table  [boolean] [default: false]
+      --cache   how long for gh to cache the query  [string] [default: "1m"]
+      --repos   query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --noDeps  Only return items that do not depend on any other items returned  [boolean] [default: false]
+      --table   shorthand for --template=table  [boolean] [default: false]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
@@ -631,6 +634,7 @@ Merge pull requests
 Command Options:
       --cache           how long for gh to cache the query  [string] [default: "1m"]
       --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --noDeps          Only return items that do not depend on any other items returned  [boolean] [default: false]
       --table           shorthand for --template=table  [boolean] [default: false]
       --report          shorthand for --template=report  [boolean] [default: false]
       --merge-strategy  strategy to use when merging the pull request  [required] [choices: "squash", "rebase"]
@@ -659,6 +663,7 @@ Get engine changes in a pull request
 Command Options:
       --cache   how long for gh to cache the query  [string] [default: "1m"]
       --repos   query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --noDeps  Only return items that do not depend on any other items returned  [boolean] [default: false]
       --table   shorthand for --template=table  [boolean] [default: false]
       --report  shorthand for --template=report  [boolean] [default: false]
 
@@ -684,6 +689,7 @@ Merge pending release PRs and publish the resulting release
 Command Options:
       --cache   how long for gh to cache the query  [string] [default: "1m"]
       --repos   query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --noDeps  Only return items that do not depend on any other items returned  [boolean] [default: false]
       --table   shorthand for --template=table  [boolean] [default: false]
       --report  shorthand for --template=report  [boolean] [default: false]
       --otp     otp to be used for publish  [string] [required]
@@ -712,6 +718,7 @@ Remove a label from pull requests
 Command Options:
       --cache         how long for gh to cache the query  [string] [default: "1m"]
       --repos         query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --noDeps        Only return items that do not depend on any other items returned  [boolean] [default: false]
       --table         shorthand for --template=table  [boolean] [default: false]
       --report        shorthand for --template=report  [boolean] [default: false]
       --remove-label  label to remove from pull requests  [string] [required]
@@ -738,6 +745,7 @@ Get engine changes in a pull request
 Command Options:
       --cache     how long for gh to cache the query  [string] [default: "1m"]
       --repos     query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --noDeps    Only return items that do not depend on any other items returned  [boolean] [default: false]
       --table     shorthand for --template=table  [boolean] [default: false]
       --report    shorthand for --template=report  [boolean] [default: false]
       --workflow  Name of the workflow to rerun  [required] [default: "CI"]

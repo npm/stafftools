@@ -5,7 +5,7 @@ import os from 'os'
 import { fileURLToPath } from 'url'
 import Yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
-import { flow, transform, identity, noop } from 'lodash-es'
+import { flow, transform, noop } from 'lodash-es'
 import createRender from '../lib/gh/render/index.mjs'
 import run from '../lib/gh/index.mjs'
 import coerceFilter from '../lib/gh/yargs/filter.mjs'
@@ -59,6 +59,11 @@ const options = {
     desc: 'filters to be parsed as relaxed json and applied to the data',
     type: 'array',
   },
+  reject: {
+    alias: 'r',
+    desc: 'rejectors to be parsed as relaxed json and applied to the data',
+    type: 'array',
+  },
   denyRepos: {
     desc: 'repos to exlude from all results',
     type: 'array',
@@ -108,25 +113,10 @@ const middleware = [
       queries,
       templates,
       argv,
-    })
-      .then(({ worker, query, template }) => ({
-        // Set the worker to the path since it will be imported
-        // via the path from within the worker thread
-        worker: worker?.default && worker.path,
-        query: query?.default,
-        template,
-        filter: flow(
-          identity,
-          ...[
-            ...(query?.filter || []),
-            ...(worker?.filter || []),
-            ...(argv?.filter || []),
-          ]
-            .filter(Boolean)
-            .map(coerceFilter)
-        ),
-      }))
-      .catch((err) => err),
+    }).catch((e) => {
+      // if command is an error, yargs will show a nice error message
+      return e
+    }),
   }),
   (argv) => {
     // convert all boolean template vars to a single template name
@@ -135,8 +125,6 @@ const middleware = [
       ...globalTemplates,
       ...argv.command.template?.default,
     }
-
-    delete argv.command.template
 
     for (const t of Object.keys(allTemplates)) {
       if (argv[t] === true) {
@@ -152,6 +140,15 @@ const middleware = [
   (argv) => ({
     progress: argv.command.worker ? argv.progress : false,
     debug: typeof argv.debug === 'object' ? argv.debug : {},
+  }),
+  ({ filter = [], reject = [], command, denyRepos, ...argv }) => ({
+    filter: flow(
+      (items) => items.filter((r) => !denyRepos.includes(r.nameWithOwner)),
+      ...filter.map((v) => coerceFilter(v, { argv })),
+      ...reject.map((v) => coerceFilter({ value: v, reject: true }, { argv })),
+      ...(command.query?.filter || []).map((v) => coerceFilter(v, { argv })),
+      ...(command.worker?.filter || []).map((v) => coerceFilter(v, { argv }))
+    ),
   }),
   (argv) => ({
     // worker data must be safe to be passed to a worker
@@ -196,5 +193,5 @@ run({ render, ...argv })
   .catch((err) => {
     render.outputError('')
     render.outputError(err.noStack ? err.message : err)
-    process.exit(1)
+    process.exit(err.code ?? 1)
   })

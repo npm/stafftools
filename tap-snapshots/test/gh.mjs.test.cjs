@@ -74,6 +74,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -95,6 +96,7 @@ Command Options:
       --cache    how long for gh to cache the query  [string] [default: "1m"]
       --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --noDeps   Only return items that do not depend on any other items returned  [boolean] [default: false]
+      --depsPrs  Only return items that have no open deps PRs  [string] [choices: "", "none", "any"] [default: ""]
       --table    shorthand for --template=table  [boolean] [default: false]
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
 
@@ -105,6 +107,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm"] [default: "table"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -123,6 +126,7 @@ Command Options:
       --cache         how long for gh to cache the query  [string] [default: "1m"]
       --repos         query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --noDeps        Only return items that do not depend on any other items returned  [boolean] [default: false]
+      --depsPrs       Only return items that have no open deps PRs  [string] [choices: "", "none", "any"] [default: ""]
       --table         shorthand for --template=table  [boolean] [default: false]
       --confirm       shorthand for --template=confirm  [boolean] [default: false]
       --report        shorthand for --template=report  [boolean] [default: false]
@@ -134,6 +138,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -167,6 +172,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm"] [default: "table"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -197,6 +203,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -224,6 +231,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -252,6 +260,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -280,6 +289,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -319,6 +329,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -349,6 +360,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -378,6 +390,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -407,6 +420,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -435,6 +449,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -460,6 +475,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -488,6 +504,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -518,6 +535,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -547,6 +565,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -573,6 +592,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -599,6 +619,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -625,6 +646,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -652,6 +674,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -677,6 +700,7 @@ Command Options:
       --cache    how long for gh to cache the query  [string] [default: "1m"]
       --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --noDeps   Only return items that do not depend on any other items returned  [boolean] [default: false]
+      --depsPrs  Only return items that have no open deps PRs  [string] [choices: "", "none", "any"] [default: ""]
       --table    shorthand for --template=table  [boolean] [default: false]
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
 
@@ -687,6 +711,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm"] [default: "table"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -705,6 +730,7 @@ Command Options:
       --cache           how long for gh to cache the query  [string] [default: "1m"]
       --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --noDeps          Only return items that do not depend on any other items returned  [boolean] [default: false]
+      --depsPrs         Only return items that have no open deps PRs  [string] [choices: "", "none", "any"] [default: ""]
       --table           shorthand for --template=table  [boolean] [default: false]
       --confirm         shorthand for --template=confirm  [boolean] [default: false]
       --report          shorthand for --template=report  [boolean] [default: false]
@@ -718,6 +744,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -736,6 +763,7 @@ Command Options:
       --cache    how long for gh to cache the query  [string] [default: "1m"]
       --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --noDeps   Only return items that do not depend on any other items returned  [boolean] [default: false]
+      --depsPrs  Only return items that have no open deps PRs  [string] [choices: "", "none", "any"] [default: ""]
       --table    shorthand for --template=table  [boolean] [default: false]
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
       --report   shorthand for --template=report  [boolean] [default: false]
@@ -746,6 +774,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -764,6 +793,7 @@ Command Options:
       --cache    how long for gh to cache the query  [string] [default: "1m"]
       --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --noDeps   Only return items that do not depend on any other items returned  [boolean] [default: false]
+      --depsPrs  Only return items that have no open deps PRs  [string] [choices: "", "none", "any"] [default: ""]
       --table    shorthand for --template=table  [boolean] [default: false]
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
       --report   shorthand for --template=report  [boolean] [default: false]
@@ -777,6 +807,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -795,6 +826,7 @@ Command Options:
       --cache         how long for gh to cache the query  [string] [default: "1m"]
       --repos         query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --noDeps        Only return items that do not depend on any other items returned  [boolean] [default: false]
+      --depsPrs       Only return items that have no open deps PRs  [string] [choices: "", "none", "any"] [default: ""]
       --table         shorthand for --template=table  [boolean] [default: false]
       --confirm       shorthand for --template=confirm  [boolean] [default: false]
       --report        shorthand for --template=report  [boolean] [default: false]
@@ -806,6 +838,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -824,6 +857,7 @@ Command Options:
       --cache     how long for gh to cache the query  [string] [default: "1m"]
       --repos     query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --noDeps    Only return items that do not depend on any other items returned  [boolean] [default: false]
+      --depsPrs   Only return items that have no open deps PRs  [string] [choices: "", "none", "any"] [default: ""]
       --table     shorthand for --template=table  [boolean] [default: false]
       --confirm   shorthand for --template=confirm  [boolean] [default: false]
       --report    shorthand for --template=report  [boolean] [default: false]
@@ -835,6 +869,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -870,6 +905,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm"] [default: "table"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -902,6 +938,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -931,6 +968,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -961,6 +999,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -991,6 +1030,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -1026,6 +1066,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm"] [default: "table"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -1058,6 +1099,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -1089,6 +1131,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -1120,6 +1163,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -1152,6 +1196,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -1183,6 +1228,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -1211,6 +1257,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -1245,6 +1292,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm"] [default: "table"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -1275,6 +1323,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -1302,6 +1351,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -1330,6 +1380,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -1358,6 +1409,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 
@@ -1387,6 +1439,7 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
 

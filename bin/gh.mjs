@@ -81,6 +81,11 @@ const options = {
     type: 'string',
     choices: templateKeys,
   },
+  sort: {
+    default: 'id',
+    type: 'string',
+    desc: 'key to sort results by',
+  },
   ...yargsUtils.templateOptions(templateKeys),
   progress: {
     hidden: true,
@@ -93,7 +98,7 @@ const options = {
     default: process.stderr.rows,
     type: 'number',
   },
-  'id-key': {
+  id: {
     hidden: true,
     default: 'id',
     type: 'string',

@@ -26,6 +26,11 @@ query (
             state
             baseRefName
             headRefName
+            labels(first: 10) {
+              nodes {
+                name
+              }
+            }
             commits(last: 1) {
               nodes {
                 commit {
@@ -34,6 +39,19 @@ query (
                     state
                   }
                 }
+              }
+            }
+          }
+        }
+        allPrs: pullRequests(first: $firstPrs, states: $state) {
+          nodes {
+            number
+            url
+            title
+            state
+            labels(first: 10) {
+              nodes {
+                name
               }
             }
           }

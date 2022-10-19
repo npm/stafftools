@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.2.0](https://github.com/npm/stafftools/compare/v2.1.1...v2.2.0) (2022-10-19)
+
+### Features
+
+* [`e7ec526`](https://github.com/npm/stafftools/commit/e7ec526c76f3eee062cd5fdc156ce4864f4acdea) [#44](https://github.com/npm/stafftools/pull/44) add pr option to filter on other open prs (@lukekarrys)
+* [`f96e425`](https://github.com/npm/stafftools/commit/f96e425b22ec043de937b3bf8cc4dd1a856373d8) add sorting (@lukekarrys)
+* [`0be91c7`](https://github.com/npm/stafftools/commit/0be91c718d837dbd2cefbbb77fc58350851a0b6a) add reject option and add-template-oss worker (@lukekarrys)
+* [`00a7702`](https://github.com/npm/stafftools/commit/00a7702299da5e93e79e56ccd18acb201fdc31c1) add better workflows for publishing multiple dependent packages (@lukekarrys)
+
 ## [2.1.1](https://github.com/npm/stafftools/compare/v2.1.0...v2.1.1) (2022-10-13)
 
 ### Bug Fixes

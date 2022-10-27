@@ -194,6 +194,7 @@ run({ render, ...argv })
     if (display != null) {
       render.output(display)
     }
+    return res
   })
   .catch((err) => {
     render.outputError('')

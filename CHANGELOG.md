@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.1](https://github.com/npm/stafftools/compare/v2.2.0...v2.2.1) (2022-10-27)
+
+### Bug Fixes
+
+* [`e6ff0e7`](https://github.com/npm/stafftools/commit/e6ff0e7e51e09c153b4884ad3a654fbb16a1b9c7) [#49](https://github.com/npm/stafftools/pull/49) dont use bin to find npx cache (@lukekarrys)
+
 ## [2.2.0](https://github.com/npm/stafftools/compare/v2.1.1...v2.2.0) (2022-10-19)
 
 ### Features

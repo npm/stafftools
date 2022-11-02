@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.2](https://github.com/npm/stafftools/compare/v2.2.1...v2.2.2) (2022-11-02)
+
+### Dependencies
+
+* [`b1aa341`](https://github.com/npm/stafftools/commit/b1aa3417fee8c5e081a3714b3ac9424af01dca22) [#51](https://github.com/npm/stafftools/pull/51) bump which from 2.0.2 to 3.0.0
+
 ## [2.2.1](https://github.com/npm/stafftools/compare/v2.2.0...v2.2.1) (2022-10-27)
 
 ### Bug Fixes

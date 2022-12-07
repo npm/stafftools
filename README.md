@@ -8,15 +8,26 @@ The npm CLI Team's Internal Tools
 
 ## Commands
 
-- **Note**: Examples in this readme omit the `npx` portion of the command.
-
 ### `gh`
 
 Run commands across all `npm-cli` repos on your local machine using working threads.
 
-`npx -p @npmcli/stafftools gh <subcommand> [...args]`
+`npx -p @npmcli/stafftools@latest gh <subcommand> [...args]`
 
 - **Note:** The [`gh`](https://cli.github.com/manual/) cli needs to be installed and authenticated.
+
+### Examples
+
+#### Merge and publish all pending minor and patch release pull requests
+
+```sh
+npx -p @npmcli/stafftools@latest gh pending-release publish-release \
+  --reject 'title: /\d+\.0\.0/' \ # Filter out PR titles matching \d.0.0 (major releases)
+  --reject 'id: npm/cli' \ # Filter out npm itself
+  --merge-strategy=rebase \ # Merge all PRs with rebase
+  --otp=OP # Use the 1Password `op` cli to get one time passwords
+  # OR specify an otp with --otp=XXXXXX
+```
 
 ### Queries
 
@@ -34,15 +45,15 @@ Without any other arguments, a query will print its data. A query `--template` o
 
 ```sh
 # Will return the result of the `repos` query
-gh repos
+npx -p @npmcli/stafftools@latest gh repos
 
 # Add --help to see what subcommands are available
-gh repos --help
+npx -p @npmcli/stafftools@latest gh repos --help
 # Commands:
-#   gh repos clone          Clone repos into a directory
-#   gh repos publish-repo   Publish repos from their default branch
-#   gh repos pull           Checkout and pull default branch of repos
-#   gh repos repo-settings  Set common settings on all repos
+#   npx -p @npmcli/stafftools@latest gh repos clone          Clone repos into a directory
+#   npx -p @npmcli/stafftools@latest gh repos publish-repo   Publish repos from their default branch
+#   npx -p @npmcli/stafftools@latest gh repos pull           Checkout and pull default branch of repos
+#   npx -p @npmcli/stafftools@latest gh repos repo-settings  Set common settings on all repos
 ```
 
 ### Workers
@@ -61,10 +72,10 @@ Note that for `type` if a worker specifies an exact query by name, then the work
 ```sh
 # This worker exports `type = 'template-oss'` so it can
 # be run as a single positional command
-gh template-oss-fix
+npx -p @npmcli/stafftools@latest gh template-oss-fix
 
 # The above is equivalent to
-gh template-oss template-oss-fix
+npx -p @npmcli/stafftools@latest gh template-oss template-oss-fix
 ```
 
 ### Options
@@ -81,26 +92,26 @@ Number of worker threads to spawn. Defaults to one less than the number of cores
 
 An array of [relaxed JSON](http://www.relaxedjson.org) strings to filter the returned data.
 
-For example: `gh merge pull-requests --filter 'title: SOME TITLE'.
+For example: `npx -p @npmcli/stafftools@latest gh merge pull-requests --filter 'title: SOME TITLE'.
 
 ### Example commands
 
 These commands will all do something on your local machine.
 
-Run `gh --help` to see a full list of commands.
+Run `npx -p @npmcli/stafftools@latest gh --help` to see a full list of commands.
 
-#### `gh repos clone`
+#### `npx -p @npmcli/stafftools@latest gh repos clone`
 
 Clone all repos returned from the query.
 
-#### `gh pending-release merge`
+#### `npx -p @npmcli/stafftools@latest gh pending-release merge`
 
 Merge all pending release pull requests.
 
-#### `gh publish`
+#### `npx -p @npmcli/stafftools@latest gh publish`
 
 Merge pending release PRs and publish the resulting release.
 
-#### `gh template-oss-fix`
+#### `npx -p @npmcli/stafftools@latest gh template-oss-fix`
 
 Fix failing template-oss pull requests.

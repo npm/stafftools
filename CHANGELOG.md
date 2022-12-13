@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.2.3](https://github.com/npm/stafftools/compare/v2.2.2...v2.2.3) (2022-12-13)
+
+### Bug Fixes
+
+* [`674c563`](https://github.com/npm/stafftools/commit/674c563968c374ea91c299d060f8ed088530802e) allow 1p or op for 1password (@lukekarrys)
+
+### Documentation
+
+* [`57399b5`](https://github.com/npm/stafftools/commit/57399b58c6f0aa07dc7522780d152e374c0e7387) add examples (@lukekarrys)
+
 ## [2.2.2](https://github.com/npm/stafftools/compare/v2.2.1...v2.2.2) (2022-11-02)
 
 ### Dependencies

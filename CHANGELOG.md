@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.2.4](https://github.com/npm/stafftools/compare/v2.2.3...v2.2.4) (2023-02-06)
+
+### Bug Fixes
+
+* [`048eafd`](https://github.com/npm/stafftools/commit/048eafd5526cd4863f561f5a2afb37bdb661a92c) [#62](https://github.com/npm/stafftools/pull/62) paginate repos to stop getting graphql timeout errors (#62) (@lukekarrys)
+
+### Dependencies
+
+* [`ca9d60c`](https://github.com/npm/stafftools/commit/ca9d60c77ce2f54853fd5fa21042e8f5f1d33713) [#60](https://github.com/npm/stafftools/pull/60) bump minimatch from 5.1.6 to 6.1.6 (#60)
+
 ## [2.2.3](https://github.com/npm/stafftools/compare/v2.2.2...v2.2.3) (2022-12-13)
 
 ### Bug Fixes

@@ -27,6 +27,7 @@ gh graphql remove-label
 gh graphql repo-settings
 gh graphql rerun-failed-workflows
 gh graphql template-oss-fix
+gh labels
 gh pending-release
 gh pending-release merge
 gh pending-release pr-engines
@@ -60,6 +61,7 @@ Commands:
   npx -p @npmcli/stafftools gh closed-pending-release  Fetch closed pending release pull requests
   npx -p @npmcli/stafftools gh dependabot              Fetch dependabot pull requests
   npx -p @npmcli/stafftools gh graphql                 Fetch a graphql query
+  npx -p @npmcli/stafftools gh labels                  Fetch pull requests
   npx -p @npmcli/stafftools gh pending-release         Fetch pending release pull requests
   npx -p @npmcli/stafftools gh pull-requests           Fetch pull requests
   npx -p @npmcli/stafftools gh repos                   Fetch repos
@@ -129,7 +131,6 @@ Command Options:
       --depsPrs       Only return items that have no open deps PRs  [string] [choices: "", "none", "any"] [default: ""]
       --table         shorthand for --template=table  [boolean] [default: false]
       --confirm       shorthand for --template=confirm  [boolean] [default: false]
-      --report        shorthand for --template=report  [boolean] [default: false]
       --remove-label  label to remove from pull requests  [string] [required]
 
 Global Options:
@@ -137,7 +138,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -192,7 +193,6 @@ Command Options:
       --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --table           shorthand for --template=table  [boolean] [default: false]
       --confirm         shorthand for --template=confirm  [boolean] [default: false]
-      --report          shorthand for --template=report  [boolean] [default: false]
       --merge-strategy  strategy to use when merging the pull request  [required] [choices: "squash", "rebase"]
       --remote          name of the remote  [required] [default: "origin"]
 
@@ -202,7 +202,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -223,14 +223,13 @@ Command Options:
       --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --table    shorthand for --template=table  [boolean] [default: false]
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
-      --report   shorthand for --template=report  [boolean] [default: false]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -251,7 +250,6 @@ Command Options:
       --repos         query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --table         shorthand for --template=table  [boolean] [default: false]
       --confirm       shorthand for --template=confirm  [boolean] [default: false]
-      --report        shorthand for --template=report  [boolean] [default: false]
       --remove-label  label to remove from pull requests  [string] [required]
 
 Global Options:
@@ -259,7 +257,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -280,7 +278,6 @@ Command Options:
       --repos     query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --table     shorthand for --template=table  [boolean] [default: false]
       --confirm   shorthand for --template=confirm  [boolean] [default: false]
-      --report    shorthand for --template=report  [boolean] [default: false]
       --workflow  Name of the workflow to rerun  [required] [default: "CI"]
 
 Global Options:
@@ -288,7 +285,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -347,7 +344,6 @@ Add template-oss to a repo
 Command Options:
       --query    path to a query file passed directly to gh api graphql  [string] [required]
       --cache    how long for gh to cache the query  [string] [default: "1m"]
-      --report   shorthand for --template=report  [boolean] [default: false]
       --remote   name of the remote  [required] [default: "origin"]
       --force    force sync the repo, this will overwrite any local changes!  [boolean] [default: false]
       --sync     whether to sync the repo  [boolean] [default: true]
@@ -359,7 +355,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -378,7 +374,6 @@ Clone repos into a directory
 Command Options:
       --query   path to a query file passed directly to gh api graphql  [string] [required]
       --cache   how long for gh to cache the query  [string] [default: "1m"]
-      --report  shorthand for --template=report  [boolean] [default: false]
       --remote  name of the remote  [required] [default: "origin"]
       --force   force sync the repo, this will overwrite any local changes!  [boolean] [default: false]
       --sync    whether to sync the repo  [boolean] [default: true]
@@ -389,7 +384,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -408,7 +403,6 @@ Delete branches of repos with no remote counterpart
 Command Options:
       --query   path to a query file passed directly to gh api graphql  [string] [required]
       --cache   how long for gh to cache the query  [string] [default: "1m"]
-      --report  shorthand for --template=report  [boolean] [default: false]
       --remote  name of the remote  [required] [default: "origin"]
       --force   force sync the repo, this will overwrite any local changes!  [boolean] [default: false]
       --sync    whether to sync the repo  [boolean] [default: true]
@@ -419,7 +413,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -438,7 +432,6 @@ Merge pull requests
 Command Options:
       --query           path to a query file passed directly to gh api graphql  [string] [required]
       --cache           how long for gh to cache the query  [string] [default: "1m"]
-      --report          shorthand for --template=report  [boolean] [default: false]
       --merge-strategy  strategy to use when merging the pull request  [required] [choices: "squash", "rebase"]
       --remote          name of the remote  [required] [default: "origin"]
 
@@ -448,7 +441,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -465,16 +458,15 @@ npx -p @npmcli/stafftools gh graphql pr-engines
 Get engine changes in a pull request
 
 Command Options:
-      --query   path to a query file passed directly to gh api graphql  [string] [required]
-      --cache   how long for gh to cache the query  [string] [default: "1m"]
-      --report  shorthand for --template=report  [boolean] [default: false]
+      --query  path to a query file passed directly to gh api graphql  [string] [required]
+      --cache  how long for gh to cache the query  [string] [default: "1m"]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -493,7 +485,6 @@ Merge pending release PRs and publish the resulting release
 Command Options:
       --query   path to a query file passed directly to gh api graphql  [string] [required]
       --cache   how long for gh to cache the query  [string] [default: "1m"]
-      --report  shorthand for --template=report  [boolean] [default: false]
       --otp     otp to be used for publish  [string] [required]
       --remote  name of the remote  [required] [default: "origin"]
 
@@ -503,7 +494,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -522,7 +513,6 @@ Publish repos from their default branch
 Command Options:
       --query   path to a query file passed directly to gh api graphql  [string] [required]
       --cache   how long for gh to cache the query  [string] [default: "1m"]
-      --report  shorthand for --template=report  [boolean] [default: false]
       --remote  name of the remote  [required] [default: "origin"]
       --force   force sync the repo, this will overwrite any local changes!  [boolean] [default: false]
       --sync    whether to sync the repo  [boolean] [default: true]
@@ -534,7 +524,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -553,7 +543,6 @@ Checkout and pull default branch of repos
 Command Options:
       --query   path to a query file passed directly to gh api graphql  [string] [required]
       --cache   how long for gh to cache the query  [string] [default: "1m"]
-      --report  shorthand for --template=report  [boolean] [default: false]
       --remote  name of the remote  [required] [default: "origin"]
       --force   force sync the repo, this will overwrite any local changes!  [boolean] [default: false]
       --sync    whether to sync the repo  [boolean] [default: true]
@@ -564,7 +553,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -583,7 +572,6 @@ Remove a label from pull requests
 Command Options:
       --query         path to a query file passed directly to gh api graphql  [string] [required]
       --cache         how long for gh to cache the query  [string] [default: "1m"]
-      --report        shorthand for --template=report  [boolean] [default: false]
       --remove-label  label to remove from pull requests  [string] [required]
 
 Global Options:
@@ -591,7 +579,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -610,7 +598,6 @@ Set common settings on all repos
 Command Options:
       --query              path to a query file passed directly to gh api graphql  [string] [required]
       --cache              how long for gh to cache the query  [string] [default: "1m"]
-      --report             shorthand for --template=report  [boolean] [default: false]
       --branch-protection  Whether to apply branch protection rules  [boolean] [default: false]
 
 Global Options:
@@ -618,7 +605,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -637,7 +624,6 @@ Get engine changes in a pull request
 Command Options:
       --query     path to a query file passed directly to gh api graphql  [string] [required]
       --cache     how long for gh to cache the query  [string] [default: "1m"]
-      --report    shorthand for --template=report  [boolean] [default: false]
       --workflow  Name of the workflow to rerun  [required] [default: "CI"]
 
 Global Options:
@@ -645,7 +631,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -664,7 +650,6 @@ Fix failing template-oss pull requests
 Command Options:
       --query    path to a query file passed directly to gh api graphql  [string] [required]
       --cache    how long for gh to cache the query  [string] [default: "1m"]
-      --report   shorthand for --template=report  [boolean] [default: false]
       --message  Commit message to be used for template oss changes, with out the \`<TYPE>:\` prefix  [required] [default: "postinstall for dependabot template-oss PR"]
 
 Global Options:
@@ -673,7 +658,36 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+`
+
+exports[`test/gh.mjs TAP all commands help labels > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh labels
+
+Fetch pull requests
+
+Command Options:
+      --cache     how long for gh to cache the query  [string] [default: "1h"]
+      --repos     query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --table     shorthand for --template=table  [boolean] [default: false]
+      --markdown  shorthand for --template=markdown  [boolean] [default: false]
+      --confirm   shorthand for --template=confirm  [boolean] [default: false]
+
+Global Options:
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "markdown", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -733,7 +747,6 @@ Command Options:
       --depsPrs         Only return items that have no open deps PRs  [string] [choices: "", "none", "any"] [default: ""]
       --table           shorthand for --template=table  [boolean] [default: false]
       --confirm         shorthand for --template=confirm  [boolean] [default: false]
-      --report          shorthand for --template=report  [boolean] [default: false]
       --merge-strategy  strategy to use when merging the pull request  [required] [choices: "squash", "rebase"]
       --remote          name of the remote  [required] [default: "origin"]
 
@@ -743,7 +756,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -766,14 +779,13 @@ Command Options:
       --depsPrs  Only return items that have no open deps PRs  [string] [choices: "", "none", "any"] [default: ""]
       --table    shorthand for --template=table  [boolean] [default: false]
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
-      --report   shorthand for --template=report  [boolean] [default: false]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -796,7 +808,6 @@ Command Options:
       --depsPrs  Only return items that have no open deps PRs  [string] [choices: "", "none", "any"] [default: ""]
       --table    shorthand for --template=table  [boolean] [default: false]
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
-      --report   shorthand for --template=report  [boolean] [default: false]
       --otp      otp to be used for publish  [string] [required]
       --remote   name of the remote  [required] [default: "origin"]
 
@@ -806,7 +817,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -829,7 +840,6 @@ Command Options:
       --depsPrs       Only return items that have no open deps PRs  [string] [choices: "", "none", "any"] [default: ""]
       --table         shorthand for --template=table  [boolean] [default: false]
       --confirm       shorthand for --template=confirm  [boolean] [default: false]
-      --report        shorthand for --template=report  [boolean] [default: false]
       --remove-label  label to remove from pull requests  [string] [required]
 
 Global Options:
@@ -837,7 +847,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -860,7 +870,6 @@ Command Options:
       --depsPrs   Only return items that have no open deps PRs  [string] [choices: "", "none", "any"] [default: ""]
       --table     shorthand for --template=table  [boolean] [default: false]
       --confirm   shorthand for --template=confirm  [boolean] [default: false]
-      --report    shorthand for --template=report  [boolean] [default: false]
       --workflow  Name of the workflow to rerun  [required] [default: "CI"]
 
 Global Options:
@@ -868,7 +877,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -927,7 +936,6 @@ Command Options:
       --state           state to filter pull requests  [string] [choices: "CLOSED", "MERGED", "OPEN"] [default: "OPEN"]
       --table           shorthand for --template=table  [boolean] [default: false]
       --confirm         shorthand for --template=confirm  [boolean] [default: false]
-      --report          shorthand for --template=report  [boolean] [default: false]
       --merge-strategy  strategy to use when merging the pull request  [required] [choices: "squash", "rebase"]
       --remote          name of the remote  [required] [default: "origin"]
 
@@ -937,7 +945,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -960,14 +968,13 @@ Command Options:
       --state    state to filter pull requests  [string] [choices: "CLOSED", "MERGED", "OPEN"] [default: "OPEN"]
       --table    shorthand for --template=table  [boolean] [default: false]
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
-      --report   shorthand for --template=report  [boolean] [default: false]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -990,7 +997,6 @@ Command Options:
       --state         state to filter pull requests  [string] [choices: "CLOSED", "MERGED", "OPEN"] [default: "OPEN"]
       --table         shorthand for --template=table  [boolean] [default: false]
       --confirm       shorthand for --template=confirm  [boolean] [default: false]
-      --report        shorthand for --template=report  [boolean] [default: false]
       --remove-label  label to remove from pull requests  [string] [required]
 
 Global Options:
@@ -998,7 +1004,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -1021,7 +1027,6 @@ Command Options:
       --state     state to filter pull requests  [string] [choices: "CLOSED", "MERGED", "OPEN"] [default: "OPEN"]
       --table     shorthand for --template=table  [boolean] [default: false]
       --confirm   shorthand for --template=confirm  [boolean] [default: false]
-      --report    shorthand for --template=report  [boolean] [default: false]
       --workflow  Name of the workflow to rerun  [required] [default: "CI"]
 
 Global Options:
@@ -1029,7 +1034,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -1086,7 +1091,6 @@ Command Options:
       --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --table    shorthand for --template=table  [boolean] [default: false]
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
-      --report   shorthand for --template=report  [boolean] [default: false]
       --remote   name of the remote  [required] [default: "origin"]
       --force    force sync the repo, this will overwrite any local changes!  [boolean] [default: false]
       --sync     whether to sync the repo  [boolean] [default: true]
@@ -1098,7 +1102,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -1119,7 +1123,6 @@ Command Options:
       --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --table    shorthand for --template=table  [boolean] [default: false]
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
-      --report   shorthand for --template=report  [boolean] [default: false]
       --remote   name of the remote  [required] [default: "origin"]
       --force    force sync the repo, this will overwrite any local changes!  [boolean] [default: false]
       --sync     whether to sync the repo  [boolean] [default: true]
@@ -1130,7 +1133,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -1151,7 +1154,6 @@ Command Options:
       --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --table    shorthand for --template=table  [boolean] [default: false]
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
-      --report   shorthand for --template=report  [boolean] [default: false]
       --remote   name of the remote  [required] [default: "origin"]
       --force    force sync the repo, this will overwrite any local changes!  [boolean] [default: false]
       --sync     whether to sync the repo  [boolean] [default: true]
@@ -1162,7 +1164,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -1183,7 +1185,6 @@ Command Options:
       --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --table    shorthand for --template=table  [boolean] [default: false]
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
-      --report   shorthand for --template=report  [boolean] [default: false]
       --remote   name of the remote  [required] [default: "origin"]
       --force    force sync the repo, this will overwrite any local changes!  [boolean] [default: false]
       --sync     whether to sync the repo  [boolean] [default: true]
@@ -1195,7 +1196,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -1216,7 +1217,6 @@ Command Options:
       --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --table    shorthand for --template=table  [boolean] [default: false]
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
-      --report   shorthand for --template=report  [boolean] [default: false]
       --remote   name of the remote  [required] [default: "origin"]
       --force    force sync the repo, this will overwrite any local changes!  [boolean] [default: false]
       --sync     whether to sync the repo  [boolean] [default: true]
@@ -1227,7 +1227,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -1248,7 +1248,6 @@ Command Options:
       --repos              query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --table              shorthand for --template=table  [boolean] [default: false]
       --confirm            shorthand for --template=confirm  [boolean] [default: false]
-      --report             shorthand for --template=report  [boolean] [default: false]
       --branch-protection  Whether to apply branch protection rules  [boolean] [default: false]
 
 Global Options:
@@ -1256,7 +1255,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -1312,7 +1311,6 @@ Command Options:
       --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --table           shorthand for --template=table  [boolean] [default: false]
       --confirm         shorthand for --template=confirm  [boolean] [default: false]
-      --report          shorthand for --template=report  [boolean] [default: false]
       --merge-strategy  strategy to use when merging the pull request  [required] [choices: "squash", "rebase"]
       --remote          name of the remote  [required] [default: "origin"]
 
@@ -1322,7 +1320,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -1343,14 +1341,13 @@ Command Options:
       --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --table    shorthand for --template=table  [boolean] [default: false]
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
-      --report   shorthand for --template=report  [boolean] [default: false]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -1371,7 +1368,6 @@ Command Options:
       --repos         query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --table         shorthand for --template=table  [boolean] [default: false]
       --confirm       shorthand for --template=confirm  [boolean] [default: false]
-      --report        shorthand for --template=report  [boolean] [default: false]
       --remove-label  label to remove from pull requests  [string] [required]
 
 Global Options:
@@ -1379,7 +1375,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -1400,7 +1396,6 @@ Command Options:
       --repos     query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --table     shorthand for --template=table  [boolean] [default: false]
       --confirm   shorthand for --template=confirm  [boolean] [default: false]
-      --report    shorthand for --template=report  [boolean] [default: false]
       --workflow  Name of the workflow to rerun  [required] [default: "CI"]
 
 Global Options:
@@ -1408,7 +1403,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -1429,7 +1424,6 @@ Command Options:
       --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
       --table    shorthand for --template=table  [boolean] [default: false]
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
-      --report   shorthand for --template=report  [boolean] [default: false]
       --message  Commit message to be used for template oss changes, with out the \`<TYPE>:\` prefix  [required] [default: "postinstall for dependabot template-oss PR"]
 
 Global Options:
@@ -1438,7 +1432,7 @@ Global Options:
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
-      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]

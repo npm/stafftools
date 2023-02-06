@@ -1,7 +1,8 @@
-query ($repos: String!, $first: Int!) {
-  search(query: $repos, first: $first, type: REPOSITORY) {
+query ($repos: String!) {
+  search(query: $repos, type: REPOSITORY) {
     nodes {
       ... on Repository {
+        id: nameWithOwner
         name
         nameWithOwner
         url

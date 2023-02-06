@@ -1,13 +1,8 @@
-query (
-  $repos: String!
-  $firstRepos: Int!
-  $firstPrs: Int!
-  $label: [String!]
-  $state: [PullRequestState!]
-) {
-  search(query: $repos, first: $firstRepos, type: REPOSITORY) {
+query ($repos: String!, $label: [String!], $state: [PullRequestState!]) {
+  search(query: $repos, type: REPOSITORY) {
     nodes {
       ... on Repository {
+        id: nameWithOwner
         name
         nameWithOwner
         owner {
@@ -18,7 +13,7 @@ query (
             text
           }
         }
-        pullRequests(labels: $label, first: $firstPrs, states: $state) {
+        pullRequests(labels: $label, first: 100, states: $state) {
           nodes {
             number
             url
@@ -42,8 +37,11 @@ query (
               }
             }
           }
+          pageInfo {
+            hasNextPage
+          }
         }
-        allPrs: pullRequests(first: $firstPrs, states: $state) {
+        allPrs: pullRequests(first: 100, states: $state) {
           nodes {
             number
             url
@@ -54,6 +52,9 @@ query (
                 name
               }
             }
+          }
+          pageInfo {
+            hasNextPage
           }
         }
       }

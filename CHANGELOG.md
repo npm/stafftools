@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.5](https://github.com/npm/stafftools/compare/v2.2.4...v2.2.5) (2023-03-21)
+
+### Dependencies
+
+* [`2fefd16`](https://github.com/npm/stafftools/commit/2fefd16319baa426d5c9ef9bf49574cad40082c1) [#72](https://github.com/npm/stafftools/pull/72) bump minimatch from 6.2.0 to 7.4.2 (#72)
+
 ## [2.2.4](https://github.com/npm/stafftools/compare/v2.2.3...v2.2.4) (2023-02-06)
 
 ### Bug Fixes

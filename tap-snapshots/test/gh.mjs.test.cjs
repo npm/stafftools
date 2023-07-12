@@ -14,6 +14,7 @@ gh dependabot merge
 gh dependabot pr-engines
 gh dependabot remove-label
 gh dependabot rerun-failed-workflows
+gh dependabot review
 gh graphql
 gh graphql add-template-oss
 gh graphql clone
@@ -26,6 +27,7 @@ gh graphql pull
 gh graphql remove-label
 gh graphql repo-settings
 gh graphql rerun-failed-workflows
+gh graphql review
 gh graphql template-oss-fix
 gh labels
 gh pending-release
@@ -34,11 +36,13 @@ gh pending-release pr-engines
 gh pending-release publish-release
 gh pending-release remove-label
 gh pending-release rerun-failed-workflows
+gh pending-release review
 gh pull-requests
 gh pull-requests merge
 gh pull-requests pr-engines
 gh pull-requests remove-label
 gh pull-requests rerun-failed-workflows
+gh pull-requests review
 gh repos
 gh repos add-template-oss
 gh repos clone
@@ -51,6 +55,7 @@ gh template-oss merge
 gh template-oss pr-engines
 gh template-oss remove-label
 gh template-oss rerun-failed-workflows
+gh template-oss review
 gh template-oss template-oss-fix
 `
 
@@ -159,6 +164,7 @@ Commands:
   npx -p @npmcli/stafftools gh dependabot pr-engines              Get engine changes in a pull request
   npx -p @npmcli/stafftools gh dependabot remove-label            Remove a label from pull requests
   npx -p @npmcli/stafftools gh dependabot rerun-failed-workflows  Get engine changes in a pull request
+  npx -p @npmcli/stafftools gh dependabot review                  Review pull requests
 
 Command Options:
       --cache    how long for gh to cache the query  [string] [default: "1m"]
@@ -195,6 +201,7 @@ Command Options:
       --confirm         shorthand for --template=confirm  [boolean] [default: false]
       --merge-strategy  strategy to use when merging the pull request  [required] [choices: "squash", "rebase"]
       --remote          name of the remote  [required] [default: "origin"]
+      --approve         whether to approve the pr  [boolean] [default: false]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
@@ -296,6 +303,34 @@ Other Options:
       --config   Path to JSON config file
 `
 
+exports[`test/gh.mjs TAP all commands help dependabot review > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh dependabot review
+
+Review pull requests
+
+Command Options:
+      --cache    how long for gh to cache the query  [string] [default: "1m"]
+      --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --table    shorthand for --template=table  [boolean] [default: false]
+      --confirm  shorthand for --template=confirm  [boolean] [default: false]
+      --approve  whether to approve the pr  [boolean] [default: false]
+
+Global Options:
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+`
+
 exports[`test/gh.mjs TAP all commands help graphql > must match snapshot 1`] = `
 npx -p @npmcli/stafftools gh graphql
 
@@ -313,6 +348,7 @@ Commands:
   npx -p @npmcli/stafftools gh graphql remove-label            Remove a label from pull requests
   npx -p @npmcli/stafftools gh graphql repo-settings           Set common settings on all repos
   npx -p @npmcli/stafftools gh graphql rerun-failed-workflows  Get engine changes in a pull request
+  npx -p @npmcli/stafftools gh graphql review                  Review pull requests
   npx -p @npmcli/stafftools gh graphql template-oss-fix        Fix failing template-oss pull requests
 
 Command Options:
@@ -434,6 +470,7 @@ Command Options:
       --cache           how long for gh to cache the query  [string] [default: "1m"]
       --merge-strategy  strategy to use when merging the pull request  [required] [choices: "squash", "rebase"]
       --remote          name of the remote  [required] [default: "origin"]
+      --approve         whether to approve the pr  [boolean] [default: false]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
@@ -642,6 +679,32 @@ Other Options:
       --config   Path to JSON config file
 `
 
+exports[`test/gh.mjs TAP all commands help graphql review > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh graphql review
+
+Review pull requests
+
+Command Options:
+      --query    path to a query file passed directly to gh api graphql  [string] [required]
+      --cache    how long for gh to cache the query  [string] [default: "1m"]
+      --approve  whether to approve the pr  [boolean] [default: false]
+
+Global Options:
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent"] [default: "json"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+`
+
 exports[`test/gh.mjs TAP all commands help graphql template-oss-fix > must match snapshot 1`] = `
 npx -p @npmcli/stafftools gh graphql template-oss-fix
 
@@ -709,6 +772,7 @@ Commands:
   npx -p @npmcli/stafftools gh pending-release publish-release         Merge pending release PRs and publish the resulting release
   npx -p @npmcli/stafftools gh pending-release remove-label            Remove a label from pull requests
   npx -p @npmcli/stafftools gh pending-release rerun-failed-workflows  Get engine changes in a pull request
+  npx -p @npmcli/stafftools gh pending-release review                  Review pull requests
 
 Command Options:
       --cache    how long for gh to cache the query  [string] [default: "1m"]
@@ -749,6 +813,7 @@ Command Options:
       --confirm         shorthand for --template=confirm  [boolean] [default: false]
       --merge-strategy  strategy to use when merging the pull request  [required] [choices: "squash", "rebase"]
       --remote          name of the remote  [required] [default: "origin"]
+      --approve         whether to approve the pr  [boolean] [default: false]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
@@ -888,6 +953,36 @@ Other Options:
       --config   Path to JSON config file
 `
 
+exports[`test/gh.mjs TAP all commands help pending-release review > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh pending-release review
+
+Review pull requests
+
+Command Options:
+      --cache    how long for gh to cache the query  [string] [default: "1m"]
+      --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --noDeps   Only return items that do not depend on any other items returned  [boolean] [default: false]
+      --depsPrs  Only return items that have no open deps PRs  [string] [choices: "", "none", "any"] [default: ""]
+      --table    shorthand for --template=table  [boolean] [default: false]
+      --confirm  shorthand for --template=confirm  [boolean] [default: false]
+      --approve  whether to approve the pr  [boolean] [default: false]
+
+Global Options:
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+`
+
 exports[`test/gh.mjs TAP all commands help pull-requests > must match snapshot 1`] = `
 npx -p @npmcli/stafftools gh pull-requests
 
@@ -898,6 +993,7 @@ Commands:
   npx -p @npmcli/stafftools gh pull-requests pr-engines              Get engine changes in a pull request
   npx -p @npmcli/stafftools gh pull-requests remove-label            Remove a label from pull requests
   npx -p @npmcli/stafftools gh pull-requests rerun-failed-workflows  Get engine changes in a pull request
+  npx -p @npmcli/stafftools gh pull-requests review                  Review pull requests
 
 Command Options:
       --cache    how long for gh to cache the query  [string] [default: "1m"]
@@ -938,6 +1034,7 @@ Command Options:
       --confirm         shorthand for --template=confirm  [boolean] [default: false]
       --merge-strategy  strategy to use when merging the pull request  [required] [choices: "squash", "rebase"]
       --remote          name of the remote  [required] [default: "origin"]
+      --approve         whether to approve the pr  [boolean] [default: false]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
@@ -1028,6 +1125,36 @@ Command Options:
       --table     shorthand for --template=table  [boolean] [default: false]
       --confirm   shorthand for --template=confirm  [boolean] [default: false]
       --workflow  Name of the workflow to rerun  [required] [default: "CI"]
+
+Global Options:
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+`
+
+exports[`test/gh.mjs TAP all commands help pull-requests review > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh pull-requests review
+
+Review pull requests
+
+Command Options:
+      --cache    how long for gh to cache the query  [string] [default: "1m"]
+      --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --label    label to filter pull requests  [string]
+      --state    state to filter pull requests  [string] [choices: "CLOSED", "MERGED", "OPEN"] [default: "OPEN"]
+      --table    shorthand for --template=table  [boolean] [default: false]
+      --confirm  shorthand for --template=confirm  [boolean] [default: false]
+      --approve  whether to approve the pr  [boolean] [default: false]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
@@ -1276,6 +1403,7 @@ Commands:
   npx -p @npmcli/stafftools gh template-oss pr-engines              Get engine changes in a pull request
   npx -p @npmcli/stafftools gh template-oss remove-label            Remove a label from pull requests
   npx -p @npmcli/stafftools gh template-oss rerun-failed-workflows  Get engine changes in a pull request
+  npx -p @npmcli/stafftools gh template-oss review                  Review pull requests
   npx -p @npmcli/stafftools gh template-oss template-oss-fix        Fix failing template-oss pull requests
 
 Command Options:
@@ -1313,6 +1441,7 @@ Command Options:
       --confirm         shorthand for --template=confirm  [boolean] [default: false]
       --merge-strategy  strategy to use when merging the pull request  [required] [choices: "squash", "rebase"]
       --remote          name of the remote  [required] [default: "origin"]
+      --approve         whether to approve the pr  [boolean] [default: false]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
@@ -1397,6 +1526,34 @@ Command Options:
       --table     shorthand for --template=table  [boolean] [default: false]
       --confirm   shorthand for --template=confirm  [boolean] [default: false]
       --workflow  Name of the workflow to rerun  [required] [default: "CI"]
+
+Global Options:
+  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "table", "confirm"] [default: "table"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+`
+
+exports[`test/gh.mjs TAP all commands help template-oss review > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh template-oss review
+
+Review pull requests
+
+Command Options:
+      --cache    how long for gh to cache the query  [string] [default: "1m"]
+      --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --table    shorthand for --template=table  [boolean] [default: false]
+      --confirm  shorthand for --template=confirm  [boolean] [default: false]
+      --approve  whether to approve the pr  [boolean] [default: false]
 
 Global Options:
   -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]

@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.3.0](https://github.com/npm/stafftools/compare/v2.2.5...v2.3.0) (2023-07-12)
+
+### Features
+
+* [`d816f12`](https://github.com/npm/stafftools/commit/d816f12b8885fb03a7329c569e0bdeabb4a04357) add review command (@lukekarrys)
+
 ## [2.2.5](https://github.com/npm/stafftools/compare/v2.2.4...v2.2.5) (2023-03-21)
 
 ### Dependencies

@@ -75,7 +75,7 @@ Commands:
   npx -p @npmcli/stafftools gh template-oss-fix        Fix failing template-oss pull requests
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -108,7 +108,7 @@ Command Options:
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -139,7 +139,7 @@ Command Options:
       --remove-label  label to remove from pull requests  [string] [required]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -173,7 +173,7 @@ Command Options:
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -204,7 +204,7 @@ Command Options:
       --approve         whether to approve the pr  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -232,7 +232,7 @@ Command Options:
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -260,7 +260,7 @@ Command Options:
       --remove-label  label to remove from pull requests  [string] [required]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -288,7 +288,7 @@ Command Options:
       --workflow  Name of the workflow to rerun  [required] [default: "CI"]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -316,7 +316,7 @@ Command Options:
       --approve  whether to approve the pr  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -356,7 +356,7 @@ Command Options:
       --cache  how long for gh to cache the query  [string] [default: "1m"]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -386,7 +386,7 @@ Command Options:
       --install  install deps  [boolean] [default: true]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -415,7 +415,7 @@ Command Options:
       --sync    whether to sync the repo  [boolean] [default: true]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -444,7 +444,7 @@ Command Options:
       --sync    whether to sync the repo  [boolean] [default: true]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -473,7 +473,7 @@ Command Options:
       --approve         whether to approve the pr  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -499,7 +499,7 @@ Command Options:
       --cache  how long for gh to cache the query  [string] [default: "1m"]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -526,7 +526,7 @@ Command Options:
       --remote  name of the remote  [required] [default: "origin"]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -556,7 +556,7 @@ Command Options:
       --otp     otp to be used for publish  [string] [required]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -585,7 +585,7 @@ Command Options:
       --sync    whether to sync the repo  [boolean] [default: true]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -612,7 +612,7 @@ Command Options:
       --remove-label  label to remove from pull requests  [string] [required]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -638,7 +638,7 @@ Command Options:
       --branch-protection  Whether to apply branch protection rules  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -664,7 +664,7 @@ Command Options:
       --workflow  Name of the workflow to rerun  [required] [default: "CI"]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -690,7 +690,7 @@ Command Options:
       --approve  whether to approve the pr  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -716,7 +716,7 @@ Command Options:
       --message  Commit message to be used for template oss changes, with out the \`<TYPE>:\` prefix  [required] [default: "postinstall for dependabot template-oss PR"]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -745,7 +745,7 @@ Command Options:
       --confirm   shorthand for --template=confirm  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -783,7 +783,7 @@ Command Options:
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -816,7 +816,7 @@ Command Options:
       --approve         whether to approve the pr  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -846,7 +846,7 @@ Command Options:
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -877,7 +877,7 @@ Command Options:
       --remote   name of the remote  [required] [default: "origin"]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -908,7 +908,7 @@ Command Options:
       --remove-label  label to remove from pull requests  [string] [required]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -938,7 +938,7 @@ Command Options:
       --workflow  Name of the workflow to rerun  [required] [default: "CI"]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -968,7 +968,7 @@ Command Options:
       --approve  whether to approve the pr  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -1004,7 +1004,7 @@ Command Options:
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -1037,7 +1037,7 @@ Command Options:
       --approve         whether to approve the pr  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -1067,7 +1067,7 @@ Command Options:
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -1097,7 +1097,7 @@ Command Options:
       --remove-label  label to remove from pull requests  [string] [required]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -1127,7 +1127,7 @@ Command Options:
       --workflow  Name of the workflow to rerun  [required] [default: "CI"]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -1157,7 +1157,7 @@ Command Options:
       --approve  whether to approve the pr  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -1192,7 +1192,7 @@ Command Options:
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -1224,7 +1224,7 @@ Command Options:
       --install  install deps  [boolean] [default: true]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -1255,7 +1255,7 @@ Command Options:
       --sync     whether to sync the repo  [boolean] [default: true]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -1286,7 +1286,7 @@ Command Options:
       --sync     whether to sync the repo  [boolean] [default: true]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -1318,7 +1318,7 @@ Command Options:
       --otp      otp to be used for publish  [string] [required]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -1349,7 +1349,7 @@ Command Options:
       --sync     whether to sync the repo  [boolean] [default: true]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -1378,7 +1378,7 @@ Command Options:
       --branch-protection  Whether to apply branch protection rules  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -1413,7 +1413,7 @@ Command Options:
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -1444,7 +1444,7 @@ Command Options:
       --approve         whether to approve the pr  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
@@ -1472,7 +1472,7 @@ Command Options:
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -1500,7 +1500,7 @@ Command Options:
       --remove-label  label to remove from pull requests  [string] [required]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -1528,7 +1528,7 @@ Command Options:
       --workflow  Name of the workflow to rerun  [required] [default: "CI"]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -1556,7 +1556,7 @@ Command Options:
       --approve  whether to approve the pr  [boolean] [default: false]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -1584,7 +1584,7 @@ Command Options:
       --message  Commit message to be used for template oss changes, with out the \`<TYPE>:\` prefix  [required] [default: "postinstall for dependabot template-oss PR"]
 
 Global Options:
-  -c, --cwd       base directory to run all commands  [string] [required] [default: "$HOME/projects"]
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]

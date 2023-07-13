@@ -43,8 +43,7 @@ const options = {
   cwd: {
     alias: 'c',
     default: resolve(process.env.HOME, 'projects'),
-    demand: true,
-    desc: 'base directory to run all commands',
+    desc: 'base directory to run filesystem related commands',
     type: 'string',
     coerce: absOrRel,
   },

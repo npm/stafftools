@@ -45,8 +45,10 @@ const options = {
     default: resolve(process.env.HOME, 'projects'),
     desc: 'base directory to run filesystem related commands',
     type: 'string',
-    coerce: absOrRel,
+    // cwd can be explicitly set to null for commands that dont require a fs
+    coerce: (v) => (v === null ? null : absOrRel(v)),
   },
+
   limit: {
     alias: 'l',
     default: os.cpus().length - 1,

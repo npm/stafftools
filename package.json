@@ -68,6 +68,7 @@
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
     "version": "4.17.0",
     "ciVersions": "latest",
+    "publish": true,
     "rootRepo": {
       "add": {
         ".github/settings.yml": false

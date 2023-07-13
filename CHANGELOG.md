@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.3.1](https://github.com/npm/stafftools/compare/v2.3.0...v2.3.1) (2023-07-13)
+
+### Bug Fixes
+
+* [`b886aca`](https://github.com/npm/stafftools/commit/b886acaa3efa42a2b878d87473cd143a40912e06) make cwd optional for api related commands (@lukekarrys)
+* [`872cc43`](https://github.com/npm/stafftools/commit/872cc4382a9740b00958f997839b6964bc36d289) use --repo for review command (@lukekarrys)
+
+### Dependencies
+
+* [`1afd259`](https://github.com/npm/stafftools/commit/1afd259198d26810f70c4b85c14cbb7ce55a6540) [#82](https://github.com/npm/stafftools/pull/82) bump minimatch from 7.4.6 to 9.0.3 (#82)
+* [`c94358d`](https://github.com/npm/stafftools/commit/c94358d77d592df0d5f437015b33ab0fffb2830f) [#84](https://github.com/npm/stafftools/pull/84) bump @supercharge/promise-pool from 2.4.0 to 3.0.0
+* [`40d1140`](https://github.com/npm/stafftools/commit/40d11408bdc6d58bff53a77079c9632a3225296e) [#78](https://github.com/npm/stafftools/pull/78) bump string-width from 5.1.2 to 6.1.0
+
 ## [2.3.0](https://github.com/npm/stafftools/compare/v2.2.5...v2.3.0) (2023-07-12)
 
 ### Features

@@ -1,6 +1,6 @@
 {
   "name": "@npmcli/stafftools",
-  "version": "2.3.1",
+  "version": "2.4.0",
   "description": "The npm CLI Team's Internal Tools",
   "main": "./lib/index.js",
   "bin": {

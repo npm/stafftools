@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.4.0](https://github.com/npm/stafftools/compare/v2.3.1...v2.4.0) (2023-07-19)
+
+### Features
+
+* [`ef10693`](https://github.com/npm/stafftools/commit/ef1069396eb65b4bf054037fae6b9536b74826f7) set repo secret command (@lukekarrys)
+
+### Bug Fixes
+
+* [`90dfc1b`](https://github.com/npm/stafftools/commit/90dfc1b99944c8eeb869acfccfae10b8a3710f67) clean gh tokens (@lukekarrys)
+* [`834b8a9`](https://github.com/npm/stafftools/commit/834b8a949c8229e767cc39282915b2ce1afe6f5f) correct failure in set-secret (@lukekarrys)
+* [`354ca01`](https://github.com/npm/stafftools/commit/354ca010bd389a9f15265b5688be2404e6ffc0e1) better filters for template-oss, review, and merge queries (@lukekarrys)
+* [`3a21cbc`](https://github.com/npm/stafftools/commit/3a21cbc039c155bb793d32272d991585900ae3c3) better null cwd support (@lukekarrys)
+
 ## [2.3.1](https://github.com/npm/stafftools/compare/v2.3.0...v2.3.1) (2023-07-13)
 
 ### Bug Fixes

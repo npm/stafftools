@@ -21,6 +21,7 @@ query ($repos: String!, $label: [String!], $state: [PullRequestState!]) {
             state
             baseRefName
             headRefName
+            reviewDecision
             labels(first: 10) {
               nodes {
                 name
@@ -30,6 +31,11 @@ query ($repos: String!, $label: [String!], $state: [PullRequestState!]) {
               nodes {
                 commit {
                   message
+                  author {
+                    user {
+                      login
+                    }
+                  }
                   statusCheckRollup {
                     state
                   }

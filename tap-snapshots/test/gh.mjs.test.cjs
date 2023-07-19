@@ -746,6 +746,7 @@ Command Options:
       --query    path to a query file passed directly to gh api graphql  [string] [required]
       --cache    how long for gh to cache the query  [string] [default: "1m"]
       --message  Commit message to be used for template oss changes, with out the \`<TYPE>:\` prefix  [required] [default: "postinstall for dependabot template-oss PR"]
+      --author   Only fix PRs if the latest commit is this author  [string] [default: "npm-cli-bot"]
 
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
@@ -1646,6 +1647,7 @@ Command Options:
       --table    shorthand for --template=table  [boolean] [default: false]
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
       --message  Commit message to be used for template oss changes, with out the \`<TYPE>:\` prefix  [required] [default: "postinstall for dependabot template-oss PR"]
+      --author   Only fix PRs if the latest commit is this author  [string] [default: "npm-cli-bot"]
 
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]

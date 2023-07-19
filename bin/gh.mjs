@@ -48,7 +48,6 @@ const options = {
     // cwd can be explicitly set to null for commands that dont require a fs
     coerce: (v) => (v === null ? null : absOrRel(v)),
   },
-
   limit: {
     alias: 'l',
     default: os.cpus().length - 1,
@@ -156,11 +155,13 @@ const middleware = [
       ...(command.worker?.filter || []).map((v) => coerceFilter(v, { argv }))
     ),
   }),
-  (argv) => ({
+  (argv) => {
     // worker data must be safe to be passed to a worker
     // via structured clone, so no functions, etc
-    workerData: JSON.parse(JSON.stringify(argv)),
-  }),
+    return {
+      workerData: JSON.parse(JSON.stringify(argv)),
+    }
+  },
 ]
 
 const yargs = Yargs(hideBin(process.argv))

@@ -29,6 +29,7 @@
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
     "just-deep-map-values": "^1.0.0",
+    "libsodium-wrappers": "^0.7.11",
     "lodash-es": "^4.17.21",
     "minimatch": "^9.0.3",
     "relaxed-json": "^1.0.3",
@@ -54,7 +55,8 @@
   },
   "prettier": {
     "semi": false,
-    "singleQuote": true
+    "singleQuote": true,
+    "trailingComma": "es5"
   },
   "tap": {
     "no-coverage": true,

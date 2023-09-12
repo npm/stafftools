@@ -766,7 +766,7 @@ Command Options:
       --cache    how long for gh to cache the query  [string] [default: "1m"]
       --report   shorthand for --template=report  [boolean] [default: false]
       --message  Commit message to be used for template oss changes, with out the \`<TYPE>:\` prefix  [required] [default: "postinstall for dependabot template-oss PR"]
-      --author   Only fix PRs if the latest commit is this author  [string] [default: "npm-cli-bot"]
+      --author   Only fix PRs if the latest commit is this author  [array] [default: ["npm-cli-bot","dependabot[bot]"]]
 
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
@@ -1691,7 +1691,7 @@ Command Options:
       --confirm  shorthand for --template=confirm  [boolean] [default: false]
       --report   shorthand for --template=report  [boolean] [default: false]
       --message  Commit message to be used for template oss changes, with out the \`<TYPE>:\` prefix  [required] [default: "postinstall for dependabot template-oss PR"]
-      --author   Only fix PRs if the latest commit is this author  [string] [default: "npm-cli-bot"]
+      --author   Only fix PRs if the latest commit is this author  [array] [default: ["npm-cli-bot","dependabot[bot]"]]
 
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]

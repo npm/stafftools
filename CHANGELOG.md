@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.4.1](https://github.com/npm/stafftools/compare/v2.4.0...v2.4.1) (2023-09-12)
+
+### Bug Fixes
+
+* [`143d3e3`](https://github.com/npm/stafftools/commit/143d3e36bb805c5eb0611642a60cc0425465c7b1) [#91](https://github.com/npm/stafftools/pull/91) add dependabot for valid commit author on template oss (@lukekarrys)
+
+### Dependencies
+
+* [`3be1d85`](https://github.com/npm/stafftools/commit/3be1d85e4591b7e51feb5cfea49f795998c4db1a) [#89](https://github.com/npm/stafftools/pull/89) bump which from 3.0.1 to 4.0.0
+
 ## [2.4.0](https://github.com/npm/stafftools/compare/v2.3.1...v2.4.0) (2023-07-19)
 
 ### Features

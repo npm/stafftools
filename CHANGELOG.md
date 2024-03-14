@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.4.2](https://github.com/npm/stafftools/compare/v2.4.1...v2.4.2) (2024-03-14)
+
+### Dependencies
+
+* [`c7510bd`](https://github.com/npm/stafftools/commit/c7510bdfd05d02752b2bb556a78aa663edaea505) [#118](https://github.com/npm/stafftools/pull/118) bump string-width from 6.1.0 to 7.1.0 (#118) (@dependabot[bot])
+
+### Chores
+
+* [`740bcff`](https://github.com/npm/stafftools/commit/740bcffaf74741a15a27bcb8e7f95aa71546913e) [#117](https://github.com/npm/stafftools/pull/117) postinstall for dependabot template-oss PR (@lukekarrys)
+* [`8f3e310`](https://github.com/npm/stafftools/commit/8f3e3100fa4df5dbb24395ddd7a75ff3cef1f826) [#117](https://github.com/npm/stafftools/pull/117) bump @npmcli/template-oss from 4.21.1 to 4.21.3 (@dependabot[bot])
+* [`e69db7d`](https://github.com/npm/stafftools/commit/e69db7d547f5552a79d370bd7404aefc9d64834a) [#114](https://github.com/npm/stafftools/pull/114) postinstall for dependabot template-oss PR (@lukekarrys)
+* [`0488934`](https://github.com/npm/stafftools/commit/04889341375a575607eeba34c449f4c207ab4cbc) [#114](https://github.com/npm/stafftools/pull/114) bump @npmcli/template-oss from 4.19.0 to 4.21.1 (@dependabot[bot])
+* [`93001d2`](https://github.com/npm/stafftools/commit/93001d20d7e546ef72fd5cc62062191b62a74998) [#93](https://github.com/npm/stafftools/pull/93) postinstall for dependabot template-oss PR (@lukekarrys)
+* [`7c76442`](https://github.com/npm/stafftools/commit/7c76442720df4fdbb4230f652173c2928eed3246) [#93](https://github.com/npm/stafftools/pull/93) bump @npmcli/template-oss from 4.18.1 to 4.19.0 (@dependabot[bot])
+* [`3e8fc88`](https://github.com/npm/stafftools/commit/3e8fc88510d327feed32b7d14d97f57134cb41ed) [#92](https://github.com/npm/stafftools/pull/92) postinstall for dependabot template-oss PR (@lukekarrys)
+* [`9d37492`](https://github.com/npm/stafftools/commit/9d374922da05fa5ca23f6542fdb0a7f329be4ada) [#92](https://github.com/npm/stafftools/pull/92) bump @npmcli/template-oss from 4.18.0 to 4.18.1 (@dependabot[bot])
+
 ## [2.4.1](https://github.com/npm/stafftools/compare/v2.4.0...v2.4.1) (2023-09-12)
 
 ### Bug Fixes

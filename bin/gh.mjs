@@ -192,7 +192,7 @@ run({ render, ...argv })
     if (res == null) {
       return
     }
-    const display = argv.template(res)
+    const display = argv.template(res, argv)
     if (display != null) {
       render.output(display)
     }

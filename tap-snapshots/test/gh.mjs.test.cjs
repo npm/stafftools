@@ -20,6 +20,7 @@ gh graphql add-template-oss
 gh graphql clone
 gh graphql delete-branches
 gh graphql merge
+gh graphql metrics
 gh graphql pr-engines
 gh graphql publish-release
 gh graphql publish-repo
@@ -48,6 +49,7 @@ gh repos
 gh repos add-template-oss
 gh repos clone
 gh repos delete-branches
+gh repos metrics
 gh repos publish-repo
 gh repos pull
 gh repos repo-settings
@@ -488,6 +490,32 @@ Command Options:
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+`
+
+exports[`test/gh.mjs TAP all commands help graphql metrics > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh graphql metrics
+
+Command Options:
+      --query   path to a query file passed directly to gh api graphql  [string] [required]
+      --cache   how long for gh to cache the query  [string] [default: "1m"]
+      --report  shorthand for --template=report  [boolean] [default: false]
+  -d, --date    the end date  [required] [default: ""]
+  -a, --ago     how many days back to go  [required] [default: "7"]
+
+Global Options:
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -1356,6 +1384,34 @@ Command Options:
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+`
+
+exports[`test/gh.mjs TAP all commands help repos metrics > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh repos metrics
+
+Command Options:
+      --cache    how long for gh to cache the query  [string] [default: "1h"]
+      --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --table    shorthand for --template=table  [boolean] [default: false]
+      --confirm  shorthand for --template=confirm  [boolean] [default: false]
+      --report   shorthand for --template=report  [boolean] [default: false]
+  -d, --date     the end date  [required] [default: ""]
+  -a, --ago      how many days back to go  [required] [default: "7"]
+
+Global Options:
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]

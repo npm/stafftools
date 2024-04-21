@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.4.2](https://github.com/npm/stafftools/compare/v2.4.1...v2.4.2) (2024-04-21)
+
+### Dependencies
+
+* [`c7510bd`](https://github.com/npm/stafftools/commit/c7510bdfd05d02752b2bb556a78aa663edaea505) [#118](https://github.com/npm/stafftools/pull/118) bump string-width from 6.1.0 to 7.1.0 (#118) (@dependabot[bot])
+
+### Chores
+
+* [`5fdc92e`](https://github.com/npm/stafftools/commit/5fdc92e2d6dd17bdaf31ff64af202bbeb57cf322) [#124](https://github.com/npm/stafftools/pull/124) postinstall for dependabot template-oss PR (@lukekarrys)
+* [`e372a23`](https://github.com/npm/stafftools/commit/e372a23c029da5042ef2ad7630418b45607b539f) [#124](https://github.com/npm/stafftools/pull/124) bump @npmcli/template-oss from 4.21.3 to 4.21.4 (@dependabot[bot])
+
 ## [2.4.1](https://github.com/npm/stafftools/compare/v2.4.0...v2.4.1) (2023-09-12)
 
 ### Bug Fixes

@@ -30,6 +30,7 @@ gh graphql rerun-failed-workflows
 gh graphql review
 gh graphql set-secret
 gh graphql template-oss-fix
+gh graphql weekly-metrics
 gh labels
 gh pending-release
 gh pending-release merge
@@ -52,6 +53,7 @@ gh repos publish-repo
 gh repos pull
 gh repos repo-settings
 gh repos set-secret
+gh repos weekly-metrics
 gh template-oss
 gh template-oss merge
 gh template-oss pr-engines
@@ -359,6 +361,7 @@ Commands:
   npx -p @npmcli/stafftools gh graphql review                  Review pull requests
   npx -p @npmcli/stafftools gh graphql set-secret              Set Publish Tokens
   npx -p @npmcli/stafftools gh graphql template-oss-fix        Fix failing template-oss pull requests
+  npx -p @npmcli/stafftools gh graphql weekly-metrics          Get weekly metrics
 
 Command Options:
       --query  path to a query file passed directly to gh api graphql  [string] [required]
@@ -771,6 +774,34 @@ Command Options:
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+`
+
+exports[`test/gh.mjs TAP all commands help graphql weekly-metrics > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh graphql weekly-metrics
+
+Get weekly metrics
+
+Command Options:
+      --query   path to a query file passed directly to gh api graphql  [string] [required]
+      --cache   how long for gh to cache the query  [string] [default: "1m"]
+      --report  shorthand for --template=report  [boolean] [default: false]
+      --date    the end date  [required] [default: ""]
+      --ago     how many days back to go  [required] [default: "7"]
+
+Global Options:
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -1249,6 +1280,7 @@ Commands:
   npx -p @npmcli/stafftools gh repos pull              Checkout and pull default branch of repos
   npx -p @npmcli/stafftools gh repos repo-settings     Set common settings on all repos
   npx -p @npmcli/stafftools gh repos set-secret        Set Publish Tokens
+  npx -p @npmcli/stafftools gh repos weekly-metrics    Get weekly metrics
 
 Command Options:
       --cache    how long for gh to cache the query  [string] [default: "1h"]
@@ -1479,6 +1511,36 @@ Command Options:
       --op-item      1Password item  [string] [required] [default: "npm cli ops (npm)"]
       --secret-name  name of the repo secret to create  [string] [required] [default: "PUBLISH_TOKEN"]
       --npm-token    the npm token to use, can also be set via stdin  [string] [required] [default: null]
+
+Global Options:
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+`
+
+exports[`test/gh.mjs TAP all commands help repos weekly-metrics > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh repos weekly-metrics
+
+Get weekly metrics
+
+Command Options:
+      --cache    how long for gh to cache the query  [string] [default: "1h"]
+      --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --table    shorthand for --template=table  [boolean] [default: false]
+      --confirm  shorthand for --template=confirm  [boolean] [default: false]
+      --report   shorthand for --template=report  [boolean] [default: false]
+      --date     the end date  [required] [default: ""]
+      --ago      how many days back to go  [required] [default: "7"]
 
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: null]

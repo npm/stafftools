@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.5.0](https://github.com/npm/stafftools/compare/v2.4.1...v2.5.0) (2024-05-07)
+
+### Features
+
+* [`5c172d9`](https://github.com/npm/stafftools/commit/5c172d9fd3f61b4e8a5a2ab6b2c012cd17c5d74c) [#123](https://github.com/npm/stafftools/pull/123) add worker to comment on a PR (#123) (@lukekarrys)
+* [`d9317f6`](https://github.com/npm/stafftools/commit/d9317f6064448ee4c3a84eadd49ca5ce9c524288) [#128](https://github.com/npm/stafftools/pull/128) add weekly-metrics (#128) (@lukekarrys, @wraithgar)
+
+### Bug Fixes
+
+* [`ffbae09`](https://github.com/npm/stafftools/commit/ffbae09e505c7fbad75f324dc363507d9a160506) [#125](https://github.com/npm/stafftools/pull/125) template-oss-fix: allow no engines (#125) (@lukekarrys)
+
+### Dependencies
+
+* [`c7510bd`](https://github.com/npm/stafftools/commit/c7510bdfd05d02752b2bb556a78aa663edaea505) [#118](https://github.com/npm/stafftools/pull/118) bump string-width from 6.1.0 to 7.1.0 (#118) (@dependabot[bot])
+
+### Chores
+
+* [`74206a5`](https://github.com/npm/stafftools/commit/74206a5f517f94aeb083e4abff3e7bbc6df6ca0b) [#126](https://github.com/npm/stafftools/pull/126) postinstall for dependabot template-oss PR (@lukekarrys)
+* [`151f7e0`](https://github.com/npm/stafftools/commit/151f7e03f4ccef97950772f3dee5200c0a638914) [#126](https://github.com/npm/stafftools/pull/126) bump @npmcli/template-oss from 4.21.4 to 4.22.0 (@dependabot[bot])
+
 ## [2.4.1](https://github.com/npm/stafftools/compare/v2.4.0...v2.4.1) (2023-09-12)
 
 ### Bug Fixes

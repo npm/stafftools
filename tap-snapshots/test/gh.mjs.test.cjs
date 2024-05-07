@@ -10,6 +10,7 @@ gh
 gh closed-pending-release
 gh closed-pending-release remove-label
 gh dependabot
+gh dependabot comment
 gh dependabot merge
 gh dependabot pr-engines
 gh dependabot remove-label
@@ -18,6 +19,7 @@ gh dependabot review
 gh graphql
 gh graphql add-template-oss
 gh graphql clone
+gh graphql comment
 gh graphql delete-branches
 gh graphql merge
 gh graphql metrics
@@ -33,6 +35,7 @@ gh graphql set-secret
 gh graphql template-oss-fix
 gh labels
 gh pending-release
+gh pending-release comment
 gh pending-release merge
 gh pending-release pr-engines
 gh pending-release publish-release
@@ -40,6 +43,7 @@ gh pending-release remove-label
 gh pending-release rerun-failed-workflows
 gh pending-release review
 gh pull-requests
+gh pull-requests comment
 gh pull-requests merge
 gh pull-requests pr-engines
 gh pull-requests remove-label
@@ -55,6 +59,7 @@ gh repos pull
 gh repos repo-settings
 gh repos set-secret
 gh template-oss
+gh template-oss comment
 gh template-oss merge
 gh template-oss pr-engines
 gh template-oss remove-label
@@ -165,6 +170,7 @@ npx -p @npmcli/stafftools gh dependabot
 Fetch dependabot pull requests
 
 Commands:
+  npx -p @npmcli/stafftools gh dependabot comment                 Comment on pull requests
   npx -p @npmcli/stafftools gh dependabot merge                   Merge pull requests
   npx -p @npmcli/stafftools gh dependabot pr-engines              Get engine changes in a pull request
   npx -p @npmcli/stafftools gh dependabot remove-label            Remove a label from pull requests
@@ -184,6 +190,35 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm"] [default: "table"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+`
+
+exports[`test/gh.mjs TAP all commands help dependabot comment > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh dependabot comment
+
+Comment on pull requests
+
+Command Options:
+      --cache    how long for gh to cache the query  [string] [default: "1m"]
+      --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --table    shorthand for --template=table  [boolean] [default: false]
+      --confirm  shorthand for --template=confirm  [boolean] [default: false]
+      --report   shorthand for --template=report  [boolean] [default: false]
+      --body     the body to post  [string] [default: false]
+
+Global Options:
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -349,6 +384,7 @@ Fetch a graphql query
 Commands:
   npx -p @npmcli/stafftools gh graphql add-template-oss        Add template-oss to a repo
   npx -p @npmcli/stafftools gh graphql clone                   Clone repos into a directory
+  npx -p @npmcli/stafftools gh graphql comment                 Comment on pull requests
   npx -p @npmcli/stafftools gh graphql delete-branches         Delete branches of repos with no remote counterpart
   npx -p @npmcli/stafftools gh graphql merge                   Merge pull requests
   npx -p @npmcli/stafftools gh graphql pr-engines              Get engine changes in a pull request
@@ -430,6 +466,33 @@ Command Options:
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
   -l, --limit     number of worker threads to spawn  [number] [default: $NUM_CORES]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+`
+
+exports[`test/gh.mjs TAP all commands help graphql comment > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh graphql comment
+
+Comment on pull requests
+
+Command Options:
+      --query   path to a query file passed directly to gh api graphql  [string] [required]
+      --cache   how long for gh to cache the query  [string] [default: "1m"]
+      --report  shorthand for --template=report  [boolean] [default: false]
+      --body    the body to post  [string] [default: false]
+
+Global Options:
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
   -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
@@ -848,6 +911,7 @@ npx -p @npmcli/stafftools gh pending-release
 Fetch pending release pull requests
 
 Commands:
+  npx -p @npmcli/stafftools gh pending-release comment                 Comment on pull requests
   npx -p @npmcli/stafftools gh pending-release merge                   Merge pull requests
   npx -p @npmcli/stafftools gh pending-release pr-engines              Get engine changes in a pull request
   npx -p @npmcli/stafftools gh pending-release publish-release         Merge pending release PRs and publish the resulting release
@@ -870,6 +934,37 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm"] [default: "table"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+`
+
+exports[`test/gh.mjs TAP all commands help pending-release comment > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh pending-release comment
+
+Comment on pull requests
+
+Command Options:
+      --cache    how long for gh to cache the query  [string] [default: "1m"]
+      --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --noDeps   Only return items that do not depend on any other items returned  [boolean] [default: false]
+      --depsPrs  Only return items that have no open deps PRs  [string] [choices: "", "none", "any"] [default: ""]
+      --table    shorthand for --template=table  [boolean] [default: false]
+      --confirm  shorthand for --template=confirm  [boolean] [default: false]
+      --report   shorthand for --template=report  [boolean] [default: false]
+      --body     the body to post  [string] [default: false]
+
+Global Options:
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -1076,6 +1171,7 @@ npx -p @npmcli/stafftools gh pull-requests
 Fetch pull requests
 
 Commands:
+  npx -p @npmcli/stafftools gh pull-requests comment                 Comment on pull requests
   npx -p @npmcli/stafftools gh pull-requests merge                   Merge pull requests
   npx -p @npmcli/stafftools gh pull-requests pr-engines              Get engine changes in a pull request
   npx -p @npmcli/stafftools gh pull-requests remove-label            Remove a label from pull requests
@@ -1097,6 +1193,37 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm"] [default: "table"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+`
+
+exports[`test/gh.mjs TAP all commands help pull-requests comment > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh pull-requests comment
+
+Comment on pull requests
+
+Command Options:
+      --cache    how long for gh to cache the query  [string] [default: "1m"]
+      --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --label    label to filter pull requests  [string]
+      --state    state to filter pull requests  [string] [choices: "CLOSED", "MERGED", "OPEN"] [default: "OPEN"]
+      --table    shorthand for --template=table  [boolean] [default: false]
+      --confirm  shorthand for --template=confirm  [boolean] [default: false]
+      --report   shorthand for --template=report  [boolean] [default: false]
+      --body     the body to post  [string] [default: false]
+
+Global Options:
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]
@@ -1558,6 +1685,7 @@ npx -p @npmcli/stafftools gh template-oss
 Fetch template-oss pull requests
 
 Commands:
+  npx -p @npmcli/stafftools gh template-oss comment                 Comment on pull requests
   npx -p @npmcli/stafftools gh template-oss merge                   Merge pull requests
   npx -p @npmcli/stafftools gh template-oss pr-engines              Get engine changes in a pull request
   npx -p @npmcli/stafftools gh template-oss remove-label            Remove a label from pull requests
@@ -1578,6 +1706,35 @@ Global Options:
   -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
       --clean     whether to rimraf the cwd first  [boolean] [default: false]
       --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm"] [default: "table"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+`
+
+exports[`test/gh.mjs TAP all commands help template-oss comment > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh template-oss comment
+
+Comment on pull requests
+
+Command Options:
+      --cache    how long for gh to cache the query  [string] [default: "1m"]
+      --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --table    shorthand for --template=table  [boolean] [default: false]
+      --confirm  shorthand for --template=confirm  [boolean] [default: false]
+      --report   shorthand for --template=report  [boolean] [default: false]
+      --body     the body to post  [string] [default: false]
+
+Global Options:
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
       --sort      key to sort results by  [string] [default: "id"]
       --json      shorthand for --template=json  [boolean] [default: false]
       --silent    shorthand for --template=silent  [boolean] [default: false]

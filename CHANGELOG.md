@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.6.0](https://github.com/npm/stafftools/compare/v2.5.0...v2.6.0) (2024-07-23)
+
+### Features
+
+* [`eb6d5ef`](https://github.com/npm/stafftools/commit/eb6d5ef8fdc6fe777a4e1d48e7b39d0e26a01f50) [#139](https://github.com/npm/stafftools/pull/139) better support for cloning forked repos (#139) (@hashtagchris)
+
 ## [2.5.0](https://github.com/npm/stafftools/compare/v2.4.1...v2.5.0) (2024-05-07)
 
 ### Features

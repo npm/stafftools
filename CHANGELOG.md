@@ -1,5 +1,30 @@
 # Changelog
 
+## [3.0.0](https://github.com/npm/stafftools/compare/v2.5.0...v3.0.0) (2024-08-27)
+
+### ⚠️ BREAKING CHANGES
+
+* `stafftools` now supports node `>=22.0.0`
+
+### Features
+
+* [`eb6d5ef`](https://github.com/npm/stafftools/commit/eb6d5ef8fdc6fe777a4e1d48e7b39d0e26a01f50) [#139](https://github.com/npm/stafftools/pull/139) better support for cloning forked repos (#139) (@hashtagchris)
+
+### Bug Fixes
+
+* [`ebc67cf`](https://github.com/npm/stafftools/commit/ebc67cf16b55df8e77db959ce58f299bfe1d7a2c) [#144](https://github.com/npm/stafftools/pull/144) move node engines to 22 (@hashtagchris)
+
+### Dependencies
+
+* [`08d9927`](https://github.com/npm/stafftools/commit/08d99277817a67b150fffe03da3e1783b3596e84) [#135](https://github.com/npm/stafftools/pull/135) bump minimatch from 9.0.5 to 10.0.1 (@dependabot[bot])
+
+### Chores
+
+* [`2612ea9`](https://github.com/npm/stafftools/commit/2612ea9b5820703ca332c389fd18a063617fc2be) [#144](https://github.com/npm/stafftools/pull/144) run template-oss-apply (@hashtagchris)
+* [`d5fcc51`](https://github.com/npm/stafftools/commit/d5fcc5170ddbac00dec437d03bdd74b757092fc2) [#143](https://github.com/npm/stafftools/pull/143) bump @npmcli/eslint-config from 4.0.5 to 5.0.0 (@dependabot[bot])
+* [`21fe981`](https://github.com/npm/stafftools/commit/21fe98195f2750b2a8a1bcde3699ee10ca08c262) [#137](https://github.com/npm/stafftools/pull/137) postinstall for dependabot template-oss PR (@hashtagchris)
+* [`0d227d9`](https://github.com/npm/stafftools/commit/0d227d97c876bbc7c489654c1aaeb315d66345fb) [#137](https://github.com/npm/stafftools/pull/137) bump @npmcli/template-oss from 4.22.0 to 4.23.1 (@dependabot[bot])
+
 ## [2.5.0](https://github.com/npm/stafftools/compare/v2.4.1...v2.5.0) (2024-05-07)
 
 ### Features

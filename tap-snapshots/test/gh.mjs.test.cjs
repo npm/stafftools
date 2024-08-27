@@ -853,11 +853,12 @@ npx -p @npmcli/stafftools gh graphql template-oss-fix
 Fix failing template-oss pull requests
 
 Command Options:
-      --query    path to a query file passed directly to gh api graphql  [string] [required]
-      --cache    how long for gh to cache the query  [string] [default: "1m"]
-      --report   shorthand for --template=report  [boolean] [default: false]
-      --message  Commit message to be used for template oss changes, with out the \`<TYPE>:\` prefix  [required] [default: "postinstall for dependabot template-oss PR"]
-      --author   Only fix PRs if the latest commit is this author  [array] [default: ["npm-cli-bot","dependabot[bot]"]]
+      --query         path to a query file passed directly to gh api graphql  [string] [required]
+      --cache         how long for gh to cache the query  [string] [default: "1m"]
+      --report        shorthand for --template=report  [boolean] [default: false]
+      --message       Commit message to be used for template oss changes, with out the \`<TYPE>:\` prefix  [required] [default: "postinstall for dependabot template-oss PR"]
+      --author        Only fix PRs if the latest commit is this author  [array] [default: ["npm-cli-bot","dependabot[bot]"]]
+      --statusIgnore  Skip PRs if the latest commit has this status  [array] [default: ["SUCCESS","PENDING"]]
 
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
@@ -1898,13 +1899,14 @@ npx -p @npmcli/stafftools gh template-oss template-oss-fix
 Fix failing template-oss pull requests
 
 Command Options:
-      --cache    how long for gh to cache the query  [string] [default: "1m"]
-      --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
-      --table    shorthand for --template=table  [boolean] [default: false]
-      --confirm  shorthand for --template=confirm  [boolean] [default: false]
-      --report   shorthand for --template=report  [boolean] [default: false]
-      --message  Commit message to be used for template oss changes, with out the \`<TYPE>:\` prefix  [required] [default: "postinstall for dependabot template-oss PR"]
-      --author   Only fix PRs if the latest commit is this author  [array] [default: ["npm-cli-bot","dependabot[bot]"]]
+      --cache         how long for gh to cache the query  [string] [default: "1m"]
+      --repos         query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --table         shorthand for --template=table  [boolean] [default: false]
+      --confirm       shorthand for --template=confirm  [boolean] [default: false]
+      --report        shorthand for --template=report  [boolean] [default: false]
+      --message       Commit message to be used for template oss changes, with out the \`<TYPE>:\` prefix  [required] [default: "postinstall for dependabot template-oss PR"]
+      --author        Only fix PRs if the latest commit is this author  [array] [default: ["npm-cli-bot","dependabot[bot]"]]
+      --statusIgnore  Skip PRs if the latest commit has this status  [array] [default: ["SUCCESS","PENDING"]]
 
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]

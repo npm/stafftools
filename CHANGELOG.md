@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.1.0](https://github.com/npm/stafftools/compare/v3.0.0...v3.1.0) (2024-08-27)
+
+### Features
+
+* [`df7a431`](https://github.com/npm/stafftools/commit/df7a431c2318a3d62df65197d4bf229d3eb34dcf) [#146](https://github.com/npm/stafftools/pull/146) Avoid refixing successful template-oss PRs (#146) (@hashtagchris, @wraithgar)
+
 ## [3.0.0](https://github.com/npm/stafftools/compare/v2.5.0...v3.0.0) (2024-08-27)
 
 ### ⚠️ BREAKING CHANGES

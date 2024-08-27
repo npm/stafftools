@@ -60,7 +60,7 @@
     "trailingComma": "es5"
   },
   "tap": {
-    "no-coverage": true,
+    "disable-coverage": true,
     "timeout": 600
   },
   "templateOSS": {

@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.1](https://github.com/npm/stafftools/compare/v3.1.0...v3.1.1) (2024-10-02)
+### Dependencies
+* [`10c1155`](https://github.com/npm/stafftools/commit/10c1155c49beec7911a6f0a7a711100ab5d19895) [#148](https://github.com/npm/stafftools/pull/148) bump `which@5.0.0`
+### Chores
+* [`4528d49`](https://github.com/npm/stafftools/commit/4528d49e38952fa870efc26b04b0a497d92ee479) [#145](https://github.com/npm/stafftools/pull/145) postinstall for dependabot template-oss PR (@hashtagchris)
+* [`2768739`](https://github.com/npm/stafftools/commit/27687393ec49a0ee86f173f258964855afaa0f3d) [#145](https://github.com/npm/stafftools/pull/145) bump @npmcli/template-oss from 4.23.1 to 4.23.3 (@dependabot[bot])
+
 ## [3.1.0](https://github.com/npm/stafftools/compare/v3.0.0...v3.1.0) (2024-08-27)
 
 ### Features

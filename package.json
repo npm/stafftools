@@ -35,7 +35,7 @@
     "minimatch": "^10.0.1",
     "relaxed-json": "^1.0.3",
     "semver": "^7.3.7",
-    "serialize-error": "^11.0.0",
+    "serialize-error": "^12.0.0",
     "single-line-log": "^1.1.2",
     "string-width": "^7.1.0",
     "which": "^5.0.0",

@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.2](https://github.com/npm/stafftools/compare/v3.1.1...v3.1.2) (2025-04-28)
+### Dependencies
+* [`37083dd`](https://github.com/npm/stafftools/commit/37083dd48da7857a41017890b06438e59d9a41ab) [#152](https://github.com/npm/stafftools/pull/152) bump serialize-error from 11.0.3 to 12.0.0 (#152) (@dependabot[bot])
+### Chores
+* [`97a22d7`](https://github.com/npm/stafftools/commit/97a22d7a7ded07d8672b466cbaddd8d725ced6a1) [#154](https://github.com/npm/stafftools/pull/154) postinstall workflow updates (#154) (@owlstronaut)
+* [`ff654da`](https://github.com/npm/stafftools/commit/ff654da6a8f1a0d13710d8f547736c0f358e7e07) [#151](https://github.com/npm/stafftools/pull/151) bump @npmcli/template-oss from 4.23.3 to 4.24.3 (#151) (@dependabot[bot], @npm-cli-bot)
+
 ## [3.1.1](https://github.com/npm/stafftools/compare/v3.1.0...v3.1.1) (2024-10-02)
 ### Dependencies
 * [`10c1155`](https://github.com/npm/stafftools/commit/10c1155c49beec7911a6f0a7a711100ab5d19895) [#148](https://github.com/npm/stafftools/pull/148) bump `which@5.0.0`

@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.1.3](https://github.com/npm/stafftools/compare/v3.1.2...v3.1.3) (2025-09-22)
+### Dependencies
+* [`7863b9a`](https://github.com/npm/stafftools/commit/7863b9a8cc0b9e0ad4f6f697435609230a71550d) [#158](https://github.com/npm/stafftools/pull/158) bump string-width from 7.2.0 to 8.0.0 (#158) (@dependabot[bot])
+### Chores
+* [`ced2905`](https://github.com/npm/stafftools/commit/ced2905af58ddc8f337d06f1026f28093d6344ab) [#160](https://github.com/npm/stafftools/pull/160) bump @npmcli/template-oss from 4.25.0 to 4.25.1 (#160) (@dependabot[bot], @npm-cli-bot)
+
 ## [3.1.2](https://github.com/npm/stafftools/compare/v3.1.1...v3.1.2) (2025-04-28)
 ### Dependencies
 * [`37083dd`](https://github.com/npm/stafftools/commit/37083dd48da7857a41017890b06438e59d9a41ab) [#152](https://github.com/npm/stafftools/pull/152) bump serialize-error from 11.0.3 to 12.0.0 (#152) (@dependabot[bot])

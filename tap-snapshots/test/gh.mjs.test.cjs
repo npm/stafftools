@@ -243,6 +243,7 @@ Command Options:
       --merge-strategy  strategy to use when merging the pull request  [required] [choices: "squash", "rebase"]
       --remote          name of the remote  [required] [default: "origin"]
       --approve         whether to approve the pr  [boolean] [default: false]
+      --requireSuccess  only merge PRs with successful CI status  [boolean] [default: true]
 
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
@@ -353,12 +354,13 @@ npx -p @npmcli/stafftools gh dependabot review
 Review pull requests
 
 Command Options:
-      --cache    how long for gh to cache the query  [string] [default: "1m"]
-      --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
-      --table    shorthand for --template=table  [boolean] [default: false]
-      --confirm  shorthand for --template=confirm  [boolean] [default: false]
-      --report   shorthand for --template=report  [boolean] [default: false]
-      --approve  whether to approve the pr  [boolean] [default: false]
+      --cache           how long for gh to cache the query  [string] [default: "1m"]
+      --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --table           shorthand for --template=table  [boolean] [default: false]
+      --confirm         shorthand for --template=confirm  [boolean] [default: false]
+      --report          shorthand for --template=report  [boolean] [default: false]
+      --approve         whether to approve the pr  [boolean] [default: false]
+      --requireSuccess  only review PRs with successful CI status  [boolean] [default: true]
 
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
@@ -549,6 +551,7 @@ Command Options:
       --merge-strategy  strategy to use when merging the pull request  [required] [choices: "squash", "rebase"]
       --remote          name of the remote  [required] [default: "origin"]
       --approve         whether to approve the pr  [boolean] [default: false]
+      --requireSuccess  only merge PRs with successful CI status  [boolean] [default: true]
 
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
@@ -796,10 +799,11 @@ npx -p @npmcli/stafftools gh graphql review
 Review pull requests
 
 Command Options:
-      --query    path to a query file passed directly to gh api graphql  [string] [required]
-      --cache    how long for gh to cache the query  [string] [default: "1m"]
-      --report   shorthand for --template=report  [boolean] [default: false]
-      --approve  whether to approve the pr  [boolean] [default: false]
+      --query           path to a query file passed directly to gh api graphql  [string] [required]
+      --cache           how long for gh to cache the query  [string] [default: "1m"]
+      --report          shorthand for --template=report  [boolean] [default: false]
+      --approve         whether to approve the pr  [boolean] [default: false]
+      --requireSuccess  only review PRs with successful CI status  [boolean] [default: true]
 
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
@@ -992,6 +996,7 @@ Command Options:
       --merge-strategy  strategy to use when merging the pull request  [required] [choices: "squash", "rebase"]
       --remote          name of the remote  [required] [default: "origin"]
       --approve         whether to approve the pr  [boolean] [default: false]
+      --requireSuccess  only merge PRs with successful CI status  [boolean] [default: true]
 
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
@@ -1141,14 +1146,15 @@ npx -p @npmcli/stafftools gh pending-release review
 Review pull requests
 
 Command Options:
-      --cache    how long for gh to cache the query  [string] [default: "1m"]
-      --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
-      --noDeps   Only return items that do not depend on any other items returned  [boolean] [default: false]
-      --depsPrs  Only return items that have no open deps PRs  [string] [choices: "", "none", "any"] [default: ""]
-      --table    shorthand for --template=table  [boolean] [default: false]
-      --confirm  shorthand for --template=confirm  [boolean] [default: false]
-      --report   shorthand for --template=report  [boolean] [default: false]
-      --approve  whether to approve the pr  [boolean] [default: false]
+      --cache           how long for gh to cache the query  [string] [default: "1m"]
+      --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --noDeps          Only return items that do not depend on any other items returned  [boolean] [default: false]
+      --depsPrs         Only return items that have no open deps PRs  [string] [choices: "", "none", "any"] [default: ""]
+      --table           shorthand for --template=table  [boolean] [default: false]
+      --confirm         shorthand for --template=confirm  [boolean] [default: false]
+      --report          shorthand for --template=report  [boolean] [default: false]
+      --approve         whether to approve the pr  [boolean] [default: false]
+      --requireSuccess  only review PRs with successful CI status  [boolean] [default: true]
 
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
@@ -1251,6 +1257,7 @@ Command Options:
       --merge-strategy  strategy to use when merging the pull request  [required] [choices: "squash", "rebase"]
       --remote          name of the remote  [required] [default: "origin"]
       --approve         whether to approve the pr  [boolean] [default: false]
+      --requireSuccess  only merge PRs with successful CI status  [boolean] [default: true]
 
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
@@ -1367,14 +1374,15 @@ npx -p @npmcli/stafftools gh pull-requests review
 Review pull requests
 
 Command Options:
-      --cache    how long for gh to cache the query  [string] [default: "1m"]
-      --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
-      --label    label to filter pull requests  [string]
-      --state    state to filter pull requests  [string] [choices: "CLOSED", "MERGED", "OPEN"] [default: "OPEN"]
-      --table    shorthand for --template=table  [boolean] [default: false]
-      --confirm  shorthand for --template=confirm  [boolean] [default: false]
-      --report   shorthand for --template=report  [boolean] [default: false]
-      --approve  whether to approve the pr  [boolean] [default: false]
+      --cache           how long for gh to cache the query  [string] [default: "1m"]
+      --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --label           label to filter pull requests  [string]
+      --state           state to filter pull requests  [string] [choices: "CLOSED", "MERGED", "OPEN"] [default: "OPEN"]
+      --table           shorthand for --template=table  [boolean] [default: false]
+      --confirm         shorthand for --template=confirm  [boolean] [default: false]
+      --report          shorthand for --template=report  [boolean] [default: false]
+      --approve         whether to approve the pr  [boolean] [default: false]
+      --requireSuccess  only review PRs with successful CI status  [boolean] [default: true]
 
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
@@ -1760,6 +1768,7 @@ Command Options:
       --merge-strategy  strategy to use when merging the pull request  [required] [choices: "squash", "rebase"]
       --remote          name of the remote  [required] [default: "origin"]
       --approve         whether to approve the pr  [boolean] [default: false]
+      --requireSuccess  only merge PRs with successful CI status  [boolean] [default: true]
 
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: "$HOME/projects"]
@@ -1870,12 +1879,13 @@ npx -p @npmcli/stafftools gh template-oss review
 Review pull requests
 
 Command Options:
-      --cache    how long for gh to cache the query  [string] [default: "1m"]
-      --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
-      --table    shorthand for --template=table  [boolean] [default: false]
-      --confirm  shorthand for --template=confirm  [boolean] [default: false]
-      --report   shorthand for --template=report  [boolean] [default: false]
-      --approve  whether to approve the pr  [boolean] [default: false]
+      --cache           how long for gh to cache the query  [string] [default: "1m"]
+      --repos           query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --table           shorthand for --template=table  [boolean] [default: false]
+      --confirm         shorthand for --template=confirm  [boolean] [default: false]
+      --report          shorthand for --template=report  [boolean] [default: false]
+      --approve         whether to approve the pr  [boolean] [default: false]
+      --requireSuccess  only review PRs with successful CI status  [boolean] [default: true]
 
 Global Options:
   -c, --cwd       base directory to run filesystem related commands  [string] [default: null]

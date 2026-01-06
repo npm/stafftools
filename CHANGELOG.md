@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.1.4](https://github.com/npm/stafftools/compare/v3.1.3...v3.1.4) (2026-01-06)
+### Dependencies
+* [`e67ac4a`](https://github.com/npm/stafftools/commit/e67ac4a4180faa936045b452ee8789264a871259) [#170](https://github.com/npm/stafftools/pull/170) bump libsodium-wrappers from 0.7.16 to 0.8.0 (#170) (@dependabot[bot])
+### Chores
+* [`149ba14`](https://github.com/npm/stafftools/commit/149ba14099d245fef962a993bad3e1638435e140) [#163](https://github.com/npm/stafftools/pull/163) bump @npmcli/eslint-config from 5.1.0 to 6.0.0 (#163) (@dependabot[bot])
+* [`5a78c1b`](https://github.com/npm/stafftools/commit/5a78c1be0788b36d4d2867b6d4a8a843f659852e) [#164](https://github.com/npm/stafftools/pull/164) template-oss-apply (#164) (@owlstronaut)
+* [`c53f44f`](https://github.com/npm/stafftools/commit/c53f44fbf826b5ff69d93e2b8a4d6941a10aac33) [#169](https://github.com/npm/stafftools/pull/169) bump @npmcli/template-oss from 4.28.0 to 4.28.1 (#169) (@dependabot[bot], @npm-cli-bot)
+
 ## [3.1.3](https://github.com/npm/stafftools/compare/v3.1.2...v3.1.3) (2025-09-22)
 ### Dependencies
 * [`7863b9a`](https://github.com/npm/stafftools/commit/7863b9a8cc0b9e0ad4f6f697435609230a71550d) [#158](https://github.com/npm/stafftools/pull/158) bump string-width from 7.2.0 to 8.0.0 (#158) (@dependabot[bot])

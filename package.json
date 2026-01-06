@@ -30,7 +30,7 @@
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
     "just-deep-map-values": "^1.0.0",
-    "libsodium-wrappers": "^0.7.11",
+    "libsodium-wrappers": "^0.8.0",
     "lodash-es": "^4.17.21",
     "minimatch": "^10.0.1",
     "relaxed-json": "^1.0.3",

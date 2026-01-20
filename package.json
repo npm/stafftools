@@ -39,7 +39,7 @@
     "single-line-log": "^1.1.2",
     "string-width": "^8.0.0",
     "which": "^6.0.0",
-    "yargs": "^17.6.0"
+    "yargs": "^18.0.0"
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^6.0.0",

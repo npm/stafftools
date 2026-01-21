@@ -16,6 +16,7 @@ gh dependabot pr-engines
 gh dependabot remove-label
 gh dependabot rerun-failed-workflows
 gh dependabot review
+gh dependabot trigger-ci
 gh graphql
 gh graphql add-template-oss
 gh graphql clone
@@ -33,6 +34,7 @@ gh graphql rerun-failed-workflows
 gh graphql review
 gh graphql set-secret
 gh graphql template-oss-fix
+gh graphql trigger-ci
 gh labels
 gh pending-release
 gh pending-release comment
@@ -42,6 +44,7 @@ gh pending-release publish-release
 gh pending-release remove-label
 gh pending-release rerun-failed-workflows
 gh pending-release review
+gh pending-release trigger-ci
 gh pull-requests
 gh pull-requests comment
 gh pull-requests merge
@@ -49,6 +52,7 @@ gh pull-requests pr-engines
 gh pull-requests remove-label
 gh pull-requests rerun-failed-workflows
 gh pull-requests review
+gh pull-requests trigger-ci
 gh repos
 gh repos add-template-oss
 gh repos clone
@@ -66,6 +70,7 @@ gh template-oss remove-label
 gh template-oss rerun-failed-workflows
 gh template-oss review
 gh template-oss template-oss-fix
+gh template-oss trigger-ci
 `
 
 exports[`test/gh.mjs TAP all commands help > must match snapshot 1`] = `
@@ -176,6 +181,7 @@ Commands:
   npx -p @npmcli/stafftools gh dependabot remove-label            Remove a label from pull requests
   npx -p @npmcli/stafftools gh dependabot rerun-failed-workflows  Get engine changes in a pull request
   npx -p @npmcli/stafftools gh dependabot review                  Review pull requests
+  npx -p @npmcli/stafftools gh dependabot trigger-ci              Trigger CI workflows for pull requests by closing and reopening them
 
 Command Options:
       --cache    how long for gh to cache the query  [string] [default: "1m"]
@@ -376,6 +382,37 @@ Other Options:
       --config   Path to JSON config file
 `
 
+exports[`test/gh.mjs TAP all commands help dependabot trigger-ci > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh dependabot trigger-ci
+
+Trigger CI workflows for pull requests by closing and reopening them
+
+Command Options:
+      --cache    how long for gh to cache the query  [string] [default: "1m"]
+      --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --table    shorthand for --template=table  [boolean] [default: false]
+      --confirm  shorthand for --template=confirm  [boolean] [default: false]
+      --report   shorthand for --template=report  [boolean] [default: false]
+
+Global Options:
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+
+Examples:
+  npx -p @npmcli/stafftools@latest gh template-oss trigger-ci  Trigger CI for template-oss PRs without definitive status (excludes SUCCESS and FAILURE by default)
+`
+
 exports[`test/gh.mjs TAP all commands help graphql > must match snapshot 1`] = `
 npx -p @npmcli/stafftools gh graphql
 
@@ -397,6 +434,7 @@ Commands:
   npx -p @npmcli/stafftools gh graphql review                  Review pull requests
   npx -p @npmcli/stafftools gh graphql set-secret              Set Publish Tokens
   npx -p @npmcli/stafftools gh graphql template-oss-fix        Fix failing template-oss pull requests
+  npx -p @npmcli/stafftools gh graphql trigger-ci              Trigger CI workflows for pull requests by closing and reopening them
 
 Command Options:
       --query  path to a query file passed directly to gh api graphql  [string] [required]
@@ -877,6 +915,35 @@ Other Options:
       --config   Path to JSON config file
 `
 
+exports[`test/gh.mjs TAP all commands help graphql trigger-ci > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh graphql trigger-ci
+
+Trigger CI workflows for pull requests by closing and reopening them
+
+Command Options:
+      --query   path to a query file passed directly to gh api graphql  [string] [required]
+      --cache   how long for gh to cache the query  [string] [default: "1m"]
+      --report  shorthand for --template=report  [boolean] [default: false]
+
+Global Options:
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+
+Examples:
+  npx -p @npmcli/stafftools@latest gh template-oss trigger-ci  Trigger CI for template-oss PRs without definitive status (excludes SUCCESS and FAILURE by default)
+`
+
 exports[`test/gh.mjs TAP all commands help labels > must match snapshot 1`] = `
 npx -p @npmcli/stafftools gh labels
 
@@ -919,6 +986,7 @@ Commands:
   npx -p @npmcli/stafftools gh pending-release remove-label            Remove a label from pull requests
   npx -p @npmcli/stafftools gh pending-release rerun-failed-workflows  Get engine changes in a pull request
   npx -p @npmcli/stafftools gh pending-release review                  Review pull requests
+  npx -p @npmcli/stafftools gh pending-release trigger-ci              Trigger CI workflows for pull requests by closing and reopening them
 
 Command Options:
       --cache    how long for gh to cache the query  [string] [default: "1m"]
@@ -1166,6 +1234,39 @@ Other Options:
       --config   Path to JSON config file
 `
 
+exports[`test/gh.mjs TAP all commands help pending-release trigger-ci > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh pending-release trigger-ci
+
+Trigger CI workflows for pull requests by closing and reopening them
+
+Command Options:
+      --cache    how long for gh to cache the query  [string] [default: "1m"]
+      --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --noDeps   Only return items that do not depend on any other items returned  [boolean] [default: false]
+      --depsPrs  Only return items that have no open deps PRs  [string] [choices: "", "none", "any"] [default: ""]
+      --table    shorthand for --template=table  [boolean] [default: false]
+      --confirm  shorthand for --template=confirm  [boolean] [default: false]
+      --report   shorthand for --template=report  [boolean] [default: false]
+
+Global Options:
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+
+Examples:
+  npx -p @npmcli/stafftools@latest gh template-oss trigger-ci  Trigger CI for template-oss PRs without definitive status (excludes SUCCESS and FAILURE by default)
+`
+
 exports[`test/gh.mjs TAP all commands help pull-requests > must match snapshot 1`] = `
 npx -p @npmcli/stafftools gh pull-requests
 
@@ -1178,6 +1279,7 @@ Commands:
   npx -p @npmcli/stafftools gh pull-requests remove-label            Remove a label from pull requests
   npx -p @npmcli/stafftools gh pull-requests rerun-failed-workflows  Get engine changes in a pull request
   npx -p @npmcli/stafftools gh pull-requests review                  Review pull requests
+  npx -p @npmcli/stafftools gh pull-requests trigger-ci              Trigger CI workflows for pull requests by closing and reopening them
 
 Command Options:
       --cache    how long for gh to cache the query  [string] [default: "1m"]
@@ -1390,6 +1492,39 @@ Other Options:
       --help     Show help  [boolean]
       --version  Show version number  [boolean]
       --config   Path to JSON config file
+`
+
+exports[`test/gh.mjs TAP all commands help pull-requests trigger-ci > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh pull-requests trigger-ci
+
+Trigger CI workflows for pull requests by closing and reopening them
+
+Command Options:
+      --cache    how long for gh to cache the query  [string] [default: "1m"]
+      --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --label    label to filter pull requests  [string]
+      --state    state to filter pull requests  [string] [choices: "CLOSED", "MERGED", "OPEN"] [default: "OPEN"]
+      --table    shorthand for --template=table  [boolean] [default: false]
+      --confirm  shorthand for --template=confirm  [boolean] [default: false]
+      --report   shorthand for --template=report  [boolean] [default: false]
+
+Global Options:
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+
+Examples:
+  npx -p @npmcli/stafftools@latest gh template-oss trigger-ci  Trigger CI for template-oss PRs without definitive status (excludes SUCCESS and FAILURE by default)
 `
 
 exports[`test/gh.mjs TAP all commands help repos > must match snapshot 1`] = `
@@ -1693,6 +1828,7 @@ Commands:
   npx -p @npmcli/stafftools gh template-oss rerun-failed-workflows  Get engine changes in a pull request
   npx -p @npmcli/stafftools gh template-oss review                  Review pull requests
   npx -p @npmcli/stafftools gh template-oss template-oss-fix        Fix failing template-oss pull requests
+  npx -p @npmcli/stafftools gh template-oss trigger-ci              Trigger CI workflows for pull requests by closing and reopening them
 
 Command Options:
       --cache    how long for gh to cache the query  [string] [default: "1m"]
@@ -1923,4 +2059,35 @@ Other Options:
       --help     Show help  [boolean]
       --version  Show version number  [boolean]
       --config   Path to JSON config file
+`
+
+exports[`test/gh.mjs TAP all commands help template-oss trigger-ci > must match snapshot 1`] = `
+npx -p @npmcli/stafftools gh template-oss trigger-ci
+
+Trigger CI workflows for pull requests by closing and reopening them
+
+Command Options:
+      --cache    how long for gh to cache the query  [string] [default: "1m"]
+      --repos    query to filter repos  [string] [required] [default: "org:npm topic:npm-cli fork:true archived:false"]
+      --table    shorthand for --template=table  [boolean] [default: false]
+      --confirm  shorthand for --template=confirm  [boolean] [default: false]
+      --report   shorthand for --template=report  [boolean] [default: false]
+
+Global Options:
+  -c, --cwd       base directory to run filesystem related commands  [string] [default: null]
+  -f, --filter    filters to be parsed as relaxed json and applied to the data  [array]
+  -r, --reject    rejectors to be parsed as relaxed json and applied to the data  [array]
+      --clean     whether to rimraf the cwd first  [boolean] [default: false]
+      --template  how to format the final output  [string] [required] [choices: "json", "silent", "table", "confirm", "report"] [default: "report"]
+      --sort      key to sort results by  [string] [default: "id"]
+      --json      shorthand for --template=json  [boolean] [default: false]
+      --silent    shorthand for --template=silent  [boolean] [default: false]
+
+Other Options:
+      --help     Show help  [boolean]
+      --version  Show version number  [boolean]
+      --config   Path to JSON config file
+
+Examples:
+  npx -p @npmcli/stafftools@latest gh template-oss trigger-ci  Trigger CI for template-oss PRs without definitive status (excludes SUCCESS and FAILURE by default)
 `

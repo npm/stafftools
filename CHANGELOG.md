@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.2.0](https://github.com/npm/stafftools/compare/v3.1.3...v3.2.0) (2026-01-21)
+### Features
+* [`67e24f8`](https://github.com/npm/stafftools/commit/67e24f8f63cb3611c7647690cddff990922fccff) [#167](https://github.com/npm/stafftools/pull/167) adds method to run workflow for many repos (#167) (@owlstronaut)
+### Dependencies
+* [`124a616`](https://github.com/npm/stafftools/commit/124a6162bda9fdf794a3ea38364979f290482926) [#155](https://github.com/npm/stafftools/pull/155) bump yargs from 17.7.2 to 18.0.0 (#155) (@dependabot[bot])
+* [`67f9491`](https://github.com/npm/stafftools/commit/67f9491756a62584ec3da8fb70abac8059f494bf) [#168](https://github.com/npm/stafftools/pull/168) bump which from 5.0.0 to 6.0.0 (#168) (@dependabot[bot])
+* [`c78ae75`](https://github.com/npm/stafftools/commit/c78ae759058fc14b6963c295ea53890911d4b478) [#173](https://github.com/npm/stafftools/pull/173) bump serialize-error from 12.0.0 to 13.0.0 (#173) (@dependabot[bot])
+* [`e67ac4a`](https://github.com/npm/stafftools/commit/e67ac4a4180faa936045b452ee8789264a871259) [#170](https://github.com/npm/stafftools/pull/170) bump libsodium-wrappers from 0.7.16 to 0.8.0 (#170) (@dependabot[bot])
+### Chores
+* [`149ba14`](https://github.com/npm/stafftools/commit/149ba14099d245fef962a993bad3e1638435e140) [#163](https://github.com/npm/stafftools/pull/163) bump @npmcli/eslint-config from 5.1.0 to 6.0.0 (#163) (@dependabot[bot])
+* [`5a78c1b`](https://github.com/npm/stafftools/commit/5a78c1be0788b36d4d2867b6d4a8a843f659852e) [#164](https://github.com/npm/stafftools/pull/164) template-oss-apply (#164) (@owlstronaut)
+* [`9db779e`](https://github.com/npm/stafftools/commit/9db779e5a2129940961d02200d19defab726e130) [#174](https://github.com/npm/stafftools/pull/174) bump @npmcli/template-oss from 4.28.1 to 4.29.0 (#174) (@dependabot[bot], @npm-cli-bot)
+
 ## [3.1.3](https://github.com/npm/stafftools/compare/v3.1.2...v3.1.3) (2025-09-22)
 ### Dependencies
 * [`7863b9a`](https://github.com/npm/stafftools/commit/7863b9a8cc0b9e0ad4f6f697435609230a71550d) [#158](https://github.com/npm/stafftools/pull/158) bump string-width from 7.2.0 to 8.0.0 (#158) (@dependabot[bot])

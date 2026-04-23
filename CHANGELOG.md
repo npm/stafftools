@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.2.1](https://github.com/npm/stafftools/compare/v3.2.0...v3.2.1) (2026-04-23)
+### Bug Fixes
+* [`6683e53`](https://github.com/npm/stafftools/commit/6683e539d0e2e23d0bc4df993e199844b1ff62b3) [#177](https://github.com/npm/stafftools/pull/177) serialize worker execution for items in the same repo (#177) (@owlstronaut)
+### Chores
+* [`6dd4340`](https://github.com/npm/stafftools/commit/6dd4340f7318cbdb8678212a271b23d823a05eae) [#176](https://github.com/npm/stafftools/pull/176) bump @npmcli/template-oss from 4.29.0 to 4.30.0 (#176) (@dependabot[bot], @npm-cli-bot)
+
 ## [3.2.0](https://github.com/npm/stafftools/compare/v3.1.3...v3.2.0) (2026-01-21)
 ### Features
 * [`67e24f8`](https://github.com/npm/stafftools/commit/67e24f8f63cb3611c7647690cddff990922fccff) [#167](https://github.com/npm/stafftools/pull/167) adds method to run workflow for many repos (#167) (@owlstronaut)

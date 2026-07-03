@@ -27,7 +27,7 @@
   "dependencies": {
     "@supercharge/promise-pool": "^3.0.0",
     "chalk": "^5.0.1",
-    "graphql": "^16.6.0",
+    "graphql": "^17.0.2",
     "graphql-tag": "^2.12.6",
     "just-deep-map-values": "^1.0.0",
     "libsodium-wrappers": "^0.8.0",
